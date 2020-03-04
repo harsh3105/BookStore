@@ -1,9 +1,12 @@
 body{
     background: #f5683d;
-    padding-top: 25vh;
+   
 }
 form{
     background: white;
+}
+section{
+    padding-top: 4vh;
 }
 .form-container{
     border-radius: 10px;
@@ -13,7 +16,11 @@ form{
 .bg-img{
     width: 80px;
     height: 80px;
-    position: absolute;
-    top: -50px;
-    left: 40%;
+    position: relative;
+    top: 30px;
+    left: 38%;
+}
+
+.bg-orange{
+    background: #f5683d;
 }
