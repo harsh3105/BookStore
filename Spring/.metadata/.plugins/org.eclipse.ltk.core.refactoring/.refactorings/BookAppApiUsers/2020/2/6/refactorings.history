@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.bookApp.api.users.ui.shared&apos; to &apos;com.bookApp.api.users.shared&apos;&#x0A;- Original project: &apos;BookAppApiUsers&apos;&#x0A;- Original element: &apos;BookAppApiUsers/src/main/java/com.bookApp.api.users.ui.shared&apos;&#x0A;- Renamed element: &apos;BookAppApiUsers/src/main/java/com.bookApp.api.users.shared&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.bookApp.api.users.ui.shared&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.bookApp.api.users.ui.shared" name="com.bookApp.api.users.shared" qualified="false" references="true" stamp="1580894083983" textual="false" version="1.0"/>
+</session>
