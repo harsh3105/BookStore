@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Add User</title>
+    <title>View Users</title>
 
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -57,45 +57,60 @@
         </div>
     </nav>
     
-    <section class="container-fluid">
-        <section class="row justify-content-center">
-            <section class="col-16 col-sm-16 col-md-6">
-                <h4 class="text-center font-weight-bold">Add a user</h4>
+    <!-- input to find  -->
+    <section class="container-fluid section-padding">
+        <section class="row justify-content-center section-padding">
+            <section class="col-16 col-sm-16 col-md-6 section-padding">
+                <h4 class="text-center font-weight-bold">View Users</h4>
                 <form class="form-container ">
                     <!-- Username -->
                     <div class="form-group ">
                         <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
                             placeholder="Enter Username">
                     </div>
-                    <!-- Password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="password" placeholder="Enter Password">
-                    </div>
-                    <!-- Confirm Password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-                    </div>
-                    <!-- Name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                            placeholder="Enter Name">
-                    </div>
-                    <!-- DOB -->
-                    <div class="form-group">
-                        <input type="date" class="form-control" id="date" aria-describedby="dateHelp"
-                            placeholder="Enter DOB">
-                    </div>
-                    <!-- Email -->
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" aria-describedby="namedate"
-                            placeholder="Enter Email">
-                    </div>
-                    <button type="submit" class="btn bg-orange btn-block">Submit</button>
+                    <button type="submit" class="btn bg-orange btn-block">Find</button>
                 </form>
             </section>
         </section>
     </section>
-    </div>
+
+    <!-- table  -->
+    <section>
+        <div class=".table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">View</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Harshg</td>
+                    <td>harsh123</td>
+                    <td>Harsh</td>
+                    <td>12/1/2020</td>
+                    <td>harsh@gmail.com</td>
+                    <td><button type="button" class="btn btn-success">View</button></td>
+                </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Harshg</td>
+                    <td>harsh123</td>
+                    <td>Harsh</td>
+                    <td>12/1/2020</td>
+                    <td>harsh@gmail.com</td>
+                    <td><button type="button" class="btn btn-success">View</button></td>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </body>
 
 </html>

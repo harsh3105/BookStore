@@ -5,9 +5,16 @@ body{
 form{
     background: white;
 }
+.section-padding{
+    padding-top: 2vh!important;
+}
+.book-padding{
+    padding-top: 0.45vh!important;
+}
 section{
     padding-top: 4vh;
 }
+
 .form-container{
     border-radius: 10px;
     padding: 30px;

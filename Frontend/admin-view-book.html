@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Add User</title>
+    <title>Find Book</title>
 
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -57,45 +57,50 @@
         </div>
     </nav>
     
-    <section class="container-fluid">
-        <section class="row justify-content-center">
-            <section class="col-16 col-sm-16 col-md-6">
-                <h4 class="text-center font-weight-bold">Add a user</h4>
+    <!-- input to find  -->
+    <section class="container-fluid book-padding">
+        <section class="row justify-content-center book-padding">
+            <section class="col-16 col-sm-16 col-md-6 book-padding">
+                <h4 class="text-center font-weight-bold">View Book Details</h4>
                 <form class="form-container ">
-                    <!-- Username -->
+                    <!-- BookID -->
                     <div class="form-group ">
-                        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
-                            placeholder="Enter Username">
+                        <input type="text" class="form-control" id="bookID" placeholder="Enter bookID">
                     </div>
-                    <!-- Password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="password" placeholder="Enter Password">
-                    </div>
-                    <!-- Confirm Password -->
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
-                    </div>
-                    <!-- Name -->
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                            placeholder="Enter Name">
-                    </div>
-                    <!-- DOB -->
-                    <div class="form-group">
-                        <input type="date" class="form-control" id="date" aria-describedby="dateHelp"
-                            placeholder="Enter DOB">
-                    </div>
-                    <!-- Email -->
-                    <div class="form-group">
-                        <input type="email" class="form-control" id="email" aria-describedby="namedate"
-                            placeholder="Enter Email">
-                    </div>
-                    <button type="submit" class="btn bg-orange btn-block">Submit</button>
+                    <button type="submit" class="btn bg-orange btn-block">Find</button>
                 </form>
             </section>
         </section>
     </section>
-    </div>
+
+    <!-- form  -->
+    <section class="container-fluid book-padding">
+        <section class="row justify-content-center book-padding">
+            <section class="col-16 col-sm-16 col-md-6 book-padding">
+                <form class="form-container ">
+                    <div class="card mx-auto" style="width: 15rem;">
+                        <img class="card-img-top" src="images/math.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Class 12 Maths</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Book ID: 123</li>
+                          <li class="list-group-item">Author: Harsh</li>
+                          <li class="list-group-item">Category: Education</li>
+                          <li class="list-group-item">Price: 120</li>
+                          <li class="list-group-item">Year: 2020</li>
+                          <li class="list-group-item">ISBN: 983648973648</li>
+                        </ul>
+                        <div class="card-body">
+                            <td><button type="button" class="btn btn-warning">Update</button></td>
+                            <td><button type="button" class="btn btn-danger">Delete</button></td>
+                        </div>
+                      </div>
+                </form>
+            </section>
+        </section>
+    </section>
 </body>
 
 </html>
