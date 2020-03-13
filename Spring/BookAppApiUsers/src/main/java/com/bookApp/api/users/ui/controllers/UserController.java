@@ -46,10 +46,6 @@ public class UserController {
 		ModelMapper modelmapper = new ModelMapper();
 		modelmapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserDTO userdto = modelmapper.map(userDetails, UserDTO.class);
-		Calendar calendar = new GregorianCalendar();
-		calendar.setTime(userDetails.getDob());
-		LocalDate a = LocalDate.fromYearMonthDay(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH) + 1, calendar.get(Calendar.DAY_OF_MONTH));
-		userdto.setDob(a);
 		UserDTO createdUser = userservice.createUser(userdto);
 		
 		CreateUserResponseModel returnValue = modelmapper.map(createdUser,CreateUserResponseModel.class);

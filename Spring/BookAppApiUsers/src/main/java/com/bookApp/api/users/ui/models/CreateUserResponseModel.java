@@ -1,12 +1,10 @@
 package com.bookApp.api.users.ui.models;
 
-import com.datastax.driver.core.LocalDate;
 
 public class CreateUserResponseModel {
 
 	private String username;
 	private String name;
-	private LocalDate dob;
 	private String email;
 	private String address;
 	private String phone;
@@ -26,15 +24,7 @@ public class CreateUserResponseModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
+	
 	public String getEmail() {
 		return email;
 	}

@@ -28,8 +28,6 @@ public class UserEntity implements Serializable{
 	@Column
 	private String email;
 	@Column
-	private LocalDate dob;
-	@Column
 	private String address;
 	@Column
 	private String name;
@@ -54,12 +52,6 @@ public class UserEntity implements Serializable{
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}
-	public LocalDate getDob() {
-		return dob;
-	}
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
 	}
 	public String getAddress() {
 		return address;
