@@ -70,4 +70,46 @@ public class UserServiceImpl implements UsersService{
 		return new ModelMapper().map(userEntity,UserDTO.class);
 	}
 
+
+
+	@Override
+	public UserDTO updateUser(UserDTO userdetails) {
+	
+		String id = getUserDetailsByUsername(userdetails.getUsername()).getUserID();
+		repo.deleteByUserID(id);
+		userdetails.setUserID(id);
+		userdetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));
+		ModelMapper modelmapper = new ModelMapper();
+		modelmapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+		UserEntity userEntity = modelmapper.map(userdetails, UserEntity.class);
+		
+		
+		repo.save(userEntity);
+		
+		UserDTO returnedValue = modelmapper.map(userEntity, UserDTO.class);
+		
+		return returnedValue;
+	}
+
+
+
+	@Override
+	public void deleteUser(String username) {
+		
+		String id = getUserDetailsByUsername(username).getUserID();
+		repo.deleteByUserID(id);
+		
+	}
+
+
+
+	@Override
+	public UserDTO getUser(String username) {
+		return getUserDetailsByUsername(username);
+		
+		
+	}
+	
+	
+
 }
