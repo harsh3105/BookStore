@@ -20,11 +20,14 @@ import com.google.gson.GsonBuilder;
 @Controller
 public class ViewController {
 	
-	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users";
+	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/addUser";
 	private static final String LOGIN_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/login";
 	private static final String ADD_BOOK_ENDPOINT_URL ="http://localhost:8011/books-ws/books/addBook";
 	private static final String GET_BOOK_ENDPOINT_URL ="http://localhost:8011/books-ws/books/getBook?id=";
 	private static final String DELETE_BOOK_ENDPOINT_URL ="http://localhost:8011/books-ws/books/deleteBook?id=";
+	private static final String GET_USER_ENDPOINT_URL ="http://localhost:8011/users-ws/users/getUser?username=";
+	private static final String DELETE_USER_ENDPOINT_URL="http://localhost:8011/users-ws/users/deleteUser?username=";
+	
 	
 	
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -44,7 +47,7 @@ public class ViewController {
 		String json = gson.toJson(user);
 		System.out.print(json);
 		User e = rt.postForObject(CREATE_USER_ENDPOINT_URL, user, User.class);
-		return "redirect:view-ws/login";
+		return "redirect:http://localhost:8011/views-ws/login";
 	}
 	
 //	Login page
@@ -142,6 +145,81 @@ public class ViewController {
 		System.out.print(json);
 		model.addAttribute("book", book1);
 		return "admin-update-book";
+	}
+	
+//	Admin Add User details
+	
+	@GetMapping(value="/admin/addUser")
+	public String showAddUser(User user) {
+		return "admin-add-user";
+	}
+	
+	@PostMapping(value="/admin/addingUser",produces = "application/json")
+	public String addUser(User user,Model model, BindingResult bindingResult) {
+		RestTemplate rt = new RestTemplate();
+		rt.postForObject(CREATE_USER_ENDPOINT_URL, user, User.class);
+		return "redirect:http://localhost:8011/views-ws/admin/home";
+		
+	}
+	
+//	Admin delete User Details
+	
+	@GetMapping("/admin/deleteUser")
+	public String showDeleteUser(User user) {
+		return "admin-delete-user";
+	}
+	
+	@PostMapping(value="/admin/findUser")
+	public String findUser(User user,Model model) {
+		RestTemplate rt = new RestTemplate();
+		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		String json = gson.toJson(user1);
+		System.out.print(json+"hvg");
+		model.addAttribute("user", user1);
+		return "admin-delete-user";
+	}
+	
+	@GetMapping(value="/admin/deletingUser")
+	public String deleteUser(@RequestParam("username") String username) {
+		RestTemplate rt = new RestTemplate();
+		rt.delete(DELETE_USER_ENDPOINT_URL+username);
+		return "redirect:http://localhost:8011/views-ws/admin/home";
+		
+	}
+	
+//	Admin View User Details
+	
+	@GetMapping(value="/admin/getUser")
+	public String showGetUser(User user) {
+		return "admin-view-user";
+	}
+	
+	@PostMapping(value="/admin/findUser2")
+	public String findUser1(User user,Model model) {
+		System.out.println(user.getUsername());
+		RestTemplate rt = new RestTemplate();
+		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		String json = gson.toJson(user1);
+		System.out.print(json+"hvg");
+		model.addAttribute("user", user1);
+		return "admin-view-user";
+	}
+	
+//	Admin Update User Details
+	
+	@GetMapping(value="/admin/updateUser")
+	public String showUpdateBook(User user) {
+		return "admin-update-user";
+	}
+	
+	@PostMapping(value="/admin/findUser3")
+	public String findBook3(User user,Model model) {
+		RestTemplate rt = new RestTemplate();
+		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		String json = gson.toJson(user1);
+		System.out.print(json);
+		model.addAttribute("user", user1);
+		return "admin-update-user";
 	}
 
 }

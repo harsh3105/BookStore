@@ -9808,3 +9808,311 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2020-03-18 15:35:59,604 [Worker-351: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-03-18 15:35:59,608 [Worker-351: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-03-18 15:35:59,608 [Worker-351: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:22:58,026 [Worker-382: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-03-18 20:23:00,090 [Worker-382: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bookApp.view:BookAppViews:0.0.1-SNAPSHOT @ /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/pom.xml.
+2020-03-18 20:23:01,646 [Worker-382: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/main/java
+2020-03-18 20:23:01,647 [Worker-382: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 20:23:01,647 [Worker-382: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 20:23:01,648 [Worker-382: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/test/java
+2020-03-18 20:23:02,000 [Worker-382: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2020-03-18 20:23:03,477 [Worker-385: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:23:03,484 [Worker-385: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:23:03,485 [Worker-385: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2020-03-18 20:23:03,505 [Worker-385: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:23:03,505 [Worker-385: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:27:57,441 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:27:57,446 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:27:57,448 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2020-03-18 20:27:57,507 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:27:57,507 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:27:59,199 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:27:59,200 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:27:59,200 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:27:59,203 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:27:59,203 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:29:53,565 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:29:53,589 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:29:53,590 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:29:53,612 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:29:53,612 [Worker-389: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:31:36,081 [Worker-391: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:31:36,082 [Worker-391: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:31:36,083 [Worker-391: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:31:36,088 [Worker-391: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:31:36,088 [Worker-391: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:33:01,745 [Worker-375: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:33:01,750 [Worker-375: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:33:01,765 [Worker-375: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:33:01,766 [Worker-375: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:33:01,766 [Worker-375: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppApiUsers/src/test/resources
+2020-03-18 20:38:52,546 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:38:52,592 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:38:52,607 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2020-03-18 20:38:52,612 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:38:52,612 [Worker-388: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:44:34,876 [Worker-400: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:44:34,880 [Worker-400: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:44:34,884 [Worker-400: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2020-03-18 20:44:34,899 [Worker-400: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:44:34,901 [Worker-400: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:47:35,621 [Worker-401: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:47:35,622 [Worker-401: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:47:35,622 [Worker-401: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:47:35,628 [Worker-401: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:47:35,628 [Worker-401: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:51:28,119 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:51:28,120 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:51:28,120 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:51:28,125 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:51:28,126 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:52:43,614 [Worker-402: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:52:43,615 [Worker-402: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:52:43,617 [Worker-402: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 12 resources
+2020-03-18 20:52:43,621 [Worker-402: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:52:43,621 [Worker-402: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:56:33,014 [Worker-402: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-03-18 20:56:33,565 [Worker-402: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bookApp.view:BookAppViews:0.0.1-SNAPSHOT @ /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/pom.xml.
+2020-03-18 20:56:34,161 [Worker-402: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/main/java
+2020-03-18 20:56:34,162 [Worker-402: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 20:56:34,162 [Worker-402: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 20:56:34,163 [Worker-402: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/test/java
+2020-03-18 20:56:34,438 [Worker-402: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2020-03-18 20:56:36,499 [Worker-404: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:56:36,502 [Worker-404: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:56:36,505 [Worker-404: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 20:56:36,523 [Worker-404: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:56:36,523 [Worker-404: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:56:44,010 [Worker-406: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:56:44,014 [Worker-406: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:56:44,016 [Worker-406: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 20:56:44,018 [Worker-406: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:56:44,018 [Worker-406: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:58:21,592 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:58:21,601 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 20:58:21,602 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:58:21,613 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:58:21,613 [Worker-397: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 20:59:00,949 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:59:00,951 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 20:59:00,952 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 20:59:00,954 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 20:59:00,954 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:04:20,964 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:20,967 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:04:20,970 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:04:20,973 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:20,973 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:04:49,354 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:49,355 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:04:49,358 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:04:49,361 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:49,361 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:04:54,682 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:54,683 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:04:54,684 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:04:54,688 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:04:54,688 [Worker-403: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:11:27,736 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:11:27,738 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:11:27,739 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:11:27,743 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:11:27,743 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:11:28,760 [Worker-390: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:11:28,760 [Worker-390: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:11:28,761 [Worker-390: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:11:28,762 [Worker-390: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:11:28,762 [Worker-390: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:13:31,581 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:13:31,583 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:13:31,585 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:13:31,587 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:13:31,588 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:13:50,535 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:13:50,538 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:13:50,539 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:13:50,545 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:13:50,545 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:14:40,420 [Worker-409: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:14:40,422 [Worker-409: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:14:40,422 [Worker-409: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:14:40,424 [Worker-409: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:14:40,424 [Worker-409: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:17:57,534 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:17:57,535 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:17:57,535 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:17:57,537 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:17:57,538 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:19:05,993 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:19:05,994 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:19:05,994 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:19:05,997 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:19:05,997 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:19:33,259 [Worker-412: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:19:33,261 [Worker-412: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:19:33,263 [Worker-412: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:19:33,266 [Worker-412: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:19:33,266 [Worker-412: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:21:59,558 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:21:59,559 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:21:59,560 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:21:59,565 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:21:59,565 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:25:01,540 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:01,544 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:25:01,547 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:25:01,549 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:01,549 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:25:14,273 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:14,273 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:25:14,273 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:25:14,277 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:14,277 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:25:45,797 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:45,802 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:25:45,802 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:25:45,806 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:25:45,806 [Worker-396: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:26:41,282 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:26:41,284 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:26:41,284 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:26:41,287 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:26:41,287 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:28:25,510 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:28:25,513 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:28:25,516 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 13 resources
+2020-03-18 21:28:25,520 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:28:25,520 [Worker-410: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:33:22,029 [Worker-415: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-03-18 21:33:22,932 [Worker-415: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bookApp.view:BookAppViews:0.0.1-SNAPSHOT @ /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/pom.xml.
+2020-03-18 21:33:24,129 [Worker-415: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/main/java
+2020-03-18 21:33:24,129 [Worker-415: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 21:33:24,130 [Worker-415: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 21:33:24,131 [Worker-415: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/test/java
+2020-03-18 21:33:24,418 [Worker-415: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2020-03-18 21:33:25,392 [Worker-413: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:33:25,393 [Worker-413: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:33:25,397 [Worker-413: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 21:33:25,436 [Worker-413: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:33:25,436 [Worker-413: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:33:44,670 [Worker-405: Launching BookAppViews - BookAppViewsApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:33:44,671 [Worker-405: Launching BookAppViews - BookAppViewsApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:33:44,674 [Worker-405: Launching BookAppViews - BookAppViewsApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 21:33:44,676 [Worker-405: Launching BookAppViews - BookAppViewsApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:33:44,676 [Worker-405: Launching BookAppViews - BookAppViewsApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:35:30,021 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:35:30,028 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:35:30,028 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:35:30,032 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:35:30,032 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:39:21,846 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:39:21,847 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:39:21,850 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 21:39:21,852 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:39:21,852 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:39:22,928 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:39:22,929 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:39:22,929 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:39:22,930 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:39:22,930 [Worker-405: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:41:42,945 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:41:42,953 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:41:42,953 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:41:42,965 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:41:42,965 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:42:42,926 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:42:42,929 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:42:42,932 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:42:42,946 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:42:42,951 [Worker-416: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:52:28,526 [Worker-422: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:52:28,528 [Worker-422: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:52:28,535 [Worker-422: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 21:52:28,546 [Worker-422: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:52:28,546 [Worker-422: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:55:43,227 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:55:43,230 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:55:43,236 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 21:55:43,243 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:55:43,243 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 21:59:28,832 [Worker-427: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:59:28,833 [Worker-427: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 21:59:28,833 [Worker-427: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 21:59:28,835 [Worker-427: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 21:59:28,836 [Worker-427: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:00:46,918 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:00:46,920 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:00:46,922 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 22:00:46,925 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:00:46,925 [Worker-424: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:03:24,522 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:03:24,545 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:03:24,554 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 22:03:24,556 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:03:24,557 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:07:33,392 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:07:33,395 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:07:33,398 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 22:07:33,400 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:07:33,400 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:09:47,126 [Worker-433: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:09:47,128 [Worker-433: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:09:47,129 [Worker-433: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 14 resources
+2020-03-18 22:09:47,132 [Worker-433: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:09:47,132 [Worker-433: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:09:48,153 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:09:48,153 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 22:09:48,153 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:09:48,155 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:09:48,155 [Worker-430: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 22:13:34,077 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:13:34,078 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 22:13:34,078 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 22:13:34,081 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 22:13:34,081 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:47:03,071 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:47:03,076 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:47:03,096 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources
+2020-03-18 23:47:03,109 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:47:03,110 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:47:14,493 [Worker-429: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-03-18 23:47:15,725 [Worker-429: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.bookApp.view:BookAppViews:0.0.1-SNAPSHOT @ /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/pom.xml.
+2020-03-18 23:47:16,678 [Worker-429: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/main/java
+2020-03-18 23:47:16,678 [Worker-429: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 23:47:16,679 [Worker-429: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /BookAppViews/src/main/resources
+2020-03-18 23:47:16,679 [Worker-429: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /BookAppViews/src/test/java
+2020-03-18 23:47:17,337 [Worker-429: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2020-03-18 23:47:18,041 [Worker-434: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:47:18,042 [Worker-434: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:47:18,043 [Worker-434: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources
+2020-03-18 23:47:18,072 [Worker-434: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:47:18,073 [Worker-434: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:48:42,435 [Worker-435: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:48:42,440 [Worker-435: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 23:48:42,440 [Worker-435: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:48:42,447 [Worker-435: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:48:42,447 [Worker-435: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:50:27,374 [Worker-439: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:50:27,376 [Worker-439: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 23:50:27,376 [Worker-439: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:50:27,379 [Worker-439: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:50:27,379 [Worker-439: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:54:03,738 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:54:03,739 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-18 23:54:03,740 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:54:03,746 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:54:03,746 [Worker-429: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-18 23:56:43,691 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:56:43,693 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-18 23:56:43,694 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources
+2020-03-18 23:56:43,696 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-18 23:56:43,696 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-19 00:01:32,434 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-19 00:01:32,436 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-03-19 00:01:32,437 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-19 00:01:32,442 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-19 00:01:32,442 [Worker-432: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
+2020-03-19 00:02:58,006 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-19 00:02:58,017 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-03-19 00:02:58,023 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 15 resources
+2020-03-19 00:02:58,027 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-03-19 00:02:58,027 [Worker-437: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/harshgrover/Desktop/Internship/Spring/BookAppViews/src/test/resources
