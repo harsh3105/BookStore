@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Delete Book</title>
+
+    <!-- BootStrap CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- custom CSS file  -->
+    <link rel="stylesheet" type="text/css" href="css/global.css" th:href="@{css/global.css}">
+</head>
+
+<body class="bg-light">
+    <!-- BootStrap JS Files  --> 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <!-- NavBar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-orange">
+        <a class="navbar-brand" href="#">BookStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Books</a>
+                </li>
+                <form class="form-inline my-2 my-lg-0 bg-orange">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+    
+    <!-- input to find  -->
+    <section class="container-fluid section-padding">
+        <section class="row justify-content-center section-padding">
+            <section class="col-16 col-sm-16 col-md-6 section-padding">
+                <h4 class="text-center font-weight-bold">Delete Book</h4>
+                <form class="form-container" th:action="@{/views-ws/admin/findBook}" th:object="${book}" method="POST">
+                    <!-- Username -->
+                    <div class="form-group ">
+                        <input type="text" class="form-control" id="bookid" th:field="*{bookId}" placeholder="Enter BookID">
+                    </div>
+                    <button type="submit" class="btn bg-orange btn-block">Find</button>
+                </form>
+            </section>
+        </section>
+    </section>
+
+    <!-- table  -->
+    <section>
+        <div class=".table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">BookID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">ISBN</th>
+                    <th scope="col">AuthorName</th>
+                    <th scope="col">Category</th>
+                    <th scope="col"> Quantity</th>
+                    <th scope="col"> Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${book}==null">
+                    <td colspan="2"> No Books Available </td>
+                </tr>
+                <tr scope="row" th:each="book : ${book}">
+                    <th th:if="${book.bookId}!=null">1</th>
+                    <td><span th:text="${book.bookId}">  </span></td>
+                    <td><span th:text="${book.Name}">  </span></td>
+                    <td><span th:text="${book.Price}">  </span></td>
+                    <td><span th:text="${book.Year}">  </span></td>
+                    <td><span th:text="${book.isbn}">  </span></td>
+                    <td><span th:text="${book.Author}">  </span></td>
+                    <td><span th:text="${book.Category}">  </span></td>
+                    <td><span th:text="${book.Quantity}">  </span></td>
+                    <td th:if="${book.bookId}!=null"><a th:href="@{deleting(id=${book.bookId})}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+
+</html>
