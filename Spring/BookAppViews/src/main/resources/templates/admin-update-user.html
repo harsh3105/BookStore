@@ -78,7 +78,7 @@
     <section class="container-fluid section-padding section-padding">
         <section class="row justify-content-center section-padding">
             <section class="col-16 col-sm-16 col-md-6 section-padding">
-                <form class="form-container" th:action="@{/views-ws/admin/addingUser}" th:object="${user}" method="POST"> 
+                <form class="form-container" th:action="@{/views-ws/admin/updatingUser}" th:object="${user}" method="POST"> 
                     <!-- Username -->
                     <div class="form-group ">
                         <input type="text" class="form-control" id="username" th:field="*{username}" th:value="${user.username}" aria-describedby="usernameHelp"

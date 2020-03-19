@@ -76,6 +76,7 @@ public class UserServiceImpl implements UsersService{
 	public UserDTO updateUser(UserDTO userdetails) {
 	
 		String id = getUserDetailsByUsername(userdetails.getUsername()).getUserID();
+		System.out.println(id);
 		repo.deleteByUserID(id);
 		userdetails.setUserID(id);
 		userdetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));

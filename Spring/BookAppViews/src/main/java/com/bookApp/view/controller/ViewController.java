@@ -27,6 +27,7 @@ public class ViewController {
 	private static final String DELETE_BOOK_ENDPOINT_URL ="http://localhost:8011/books-ws/books/deleteBook?id=";
 	private static final String GET_USER_ENDPOINT_URL ="http://localhost:8011/users-ws/users/getUser?username=";
 	private static final String DELETE_USER_ENDPOINT_URL="http://localhost:8011/users-ws/users/deleteUser?username=";
+	private static final String UPDATE_USER_ENDPOINT_URL="http://localhost:8011/users-ws/users/updateUser";
 	
 	
 	
@@ -220,6 +221,14 @@ public class ViewController {
 		System.out.print(json);
 		model.addAttribute("user", user1);
 		return "admin-update-user";
+	}
+	
+	@PostMapping(value="/admin/updatingUser",produces = "application/json")
+	public String updateUser(User user,Model model, BindingResult bindingResult) {
+		RestTemplate rt = new RestTemplate();
+		rt.postForObject(UPDATE_USER_ENDPOINT_URL, user, User.class);
+		return "redirect:http://localhost:8011/views-ws/admin/home";
+		
 	}
 
 }
