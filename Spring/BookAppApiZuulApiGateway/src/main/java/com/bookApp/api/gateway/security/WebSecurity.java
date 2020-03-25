@@ -27,6 +27,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
 		http.authorizeRequests()
+		.antMatchers(environment.getProperty("api.orders.url.path")).permitAll()
 		.antMatchers(environment.getProperty("api.book.url.path")).permitAll()
 		.antMatchers(environment.getProperty("api.user.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,environment.getProperty("api.login.url.path")).permitAll()
