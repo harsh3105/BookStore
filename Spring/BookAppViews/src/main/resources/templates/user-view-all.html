@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Sign Up</title>
+
+    <meta charset="UTF-8"/>
+    <!-- BootStrap CSS file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- custom CSS file  -->
+    <link rel="stylesheet" type="text/css" href=@{classpath:static/css/global.css}>
+</head>
+
+<body class="bg-light">
+    <!-- BootStrap JS Files  -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+
+    <!-- NavBar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-orange">
+        <a class="navbar-brand" href="#">BookStore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Books</a>
+                </li>
+                <form class="form-inline my-2 my-lg-0 bg-orange">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+    <!-- table  -->
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Author</th>
+                <th scope="col">Price</th>
+                <th scope="col">View</th>
+                <th scope="col">Order</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${books}==null">
+                    <td colspan="2"> No Books Available </td>
+                </tr>
+            <tr th:each="books : ${books}">
+                <td><img src="images/math.jpg" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block" width="150" height="200"></td>
+                <td><span th:text="${books.Name}"></span></td>
+                <td><span th:text="${books.Description}"></span></td>
+                <td><span th:text="${books.Author}"></span></td>
+                <td><span th:text="${books.Price}"></span></td>
+                <td><button type="button" class="btn btn-primary">View</button></td>
+                <td><a th:href="@{ordering(id=${books.bookId},userid='8054e436-b674-4fb9-a94e-10c23510cd5d')}" class="btn btn-success">Order</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

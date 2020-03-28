@@ -1,8 +1,10 @@
 package com.bookApp.api.books.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +29,7 @@ public class BooksController {
 		return "working";
 	}
 	
-	@PostMapping(value="/addBook", consumes="application/json")
+	@PostMapping(value="/addBook")
 	public void addBook(@RequestBody Book book){
 		System.out.print(book.getBookId()+"skh");
 		repo.save(book);
@@ -48,5 +50,21 @@ public class BooksController {
 	public Optional<Book> getBook(@RequestParam("id") String BookId){
 		Optional<Book> book=repo.findById(BookId);
 		return book;
+	}
+	
+	@GetMapping("/getAllBook")
+	public List<Book> getAllBooks(){
+		List<Book> books = repo.findAll();
+		return books;
+	}
+	
+	@GetMapping("/orderBook")
+	public void orderBook(@RequestParam("id") String BookId) {
+		Optional<Book> book=repo.findById(BookId);
+		Book book1  = book.get();
+		book1.setQuantity(book1.getQuantity()-1);
+		repo.deleteById(BookId);
+		repo.save(book1);
+		
 	}
 }

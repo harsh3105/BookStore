@@ -32,10 +32,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 		.antMatchers(environment.getProperty("api.user.url.path")).permitAll()
 		.antMatchers(HttpMethod.POST,environment.getProperty("api.login.url.path")).permitAll()
 		.antMatchers(environment.getProperty("view.all.url.path")).permitAll()
+		.antMatchers("/css/**").permitAll()
+		.antMatchers("/scripts/**").permitAll()
+		.antMatchers("/images/**").permitAll()
+		.antMatchers("/resources/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.addFilter(new AuthorizationFilter(authenticationManager(), environment));
-		
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 	}
 }

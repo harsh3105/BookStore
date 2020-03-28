@@ -2,6 +2,13 @@ package com.bookApp.view.controller;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.bookApp.view.model.Book;
+import com.bookApp.view.model.BookResponse;
 import com.bookApp.view.model.User;
 import com.bookApp.view.model.UserLogin;
 import com.google.gson.Gson;
@@ -20,6 +28,7 @@ import com.google.gson.GsonBuilder;
 @Controller
 public class ViewController {
 	
+	// admin
 	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/addUser";
 	private static final String LOGIN_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/login";
 	private static final String ADD_BOOK_ENDPOINT_URL ="http://localhost:8011/books-ws/books/addBook";
@@ -29,6 +38,11 @@ public class ViewController {
 	private static final String DELETE_USER_ENDPOINT_URL="http://localhost:8011/users-ws/users/deleteUser?username=";
 	private static final String UPDATE_USER_ENDPOINT_URL="http://localhost:8011/users-ws/users/updateUser";
 	
+	// user
+	private static final String GET_ALL_BOOKS_ENDPOINT_URL ="http://localhost:8011/books-ws/books/getAllBook";
+	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderBook?id=";
+	private static final String GENERATE_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/addOrder?userid=";
+	private static final Object String = null;
 	
 	
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -229,6 +243,24 @@ public class ViewController {
 		rt.postForObject(UPDATE_USER_ENDPOINT_URL, user, User.class);
 		return "redirect:http://localhost:8011/views-ws/admin/home";
 		
+	}
+	
+//	User View Books
+	@GetMapping(value="/user/showBooks")
+	public String showBooks(Model model) {
+		RestTemplate rt = new RestTemplate();
+		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL,HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {});
+		List<Book> books = response.getBody();
+		model.addAttribute("books", books);
+		return "user-view-all";
+	}
+	
+	@GetMapping(value="/user/ordering")
+	public String orderBook(@RequestParam("id") String bookid,@RequestParam("userid") String userid) {
+		RestTemplate rt = new RestTemplate();
+		rt.getForObject(ORDER_BOOK_ENDPOINT_URL + bookid, String.class);
+		rt.postForObject(GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + bookid, String ,String.class);
+		return "redirect:http://localhost:8011/views-ws/user/showBooks";
 	}
 
 }

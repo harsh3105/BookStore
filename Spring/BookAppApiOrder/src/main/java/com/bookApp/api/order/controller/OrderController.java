@@ -1,5 +1,7 @@
 package com.bookApp.api.order.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.bookApp.api.order.model.Orders;
-import com.bookApp.api.order.model.RequestOrders;
 import com.bookApp.api.order.repo.OrderRepository;
 
 @RestController
@@ -30,16 +31,21 @@ public class OrderController {
 		System.out.print("working");
 	}
 	
-	@PostMapping(value="/addOrder", consumes="application/json")
-	public String addBook(@RequestBody RequestOrders reqorder){
+	@PostMapping(value="/addOrder")
+	public String addBook(@RequestParam("userid")  String userId, @RequestParam("bookid") String bookId){
 		//System.out.print(reqorder.getUserid()+"skh");
 		Orders order = new Orders();
 		UUID id = UUID.randomUUID();
 		order.setOrderid(id);
-		order.setUserid(reqorder.getUserid());
-		order.setBookIds(reqorder.getBookIds());
+		UUID userid = UUID.fromString(userId);
+		order.setUserid(userid);
+		List<String> bookids = new ArrayList<>();
+		String[] bookid = bookId.split(",");
+		for(int i=0;i<bookid.length;i++) {
+			bookids.add(bookid[i]);
+		}
+		order.setBookIds(bookids);
 		repo.save(order);
-		System.out.print(reqorder.getBookIds());
 		return "done";
 	}
 	
