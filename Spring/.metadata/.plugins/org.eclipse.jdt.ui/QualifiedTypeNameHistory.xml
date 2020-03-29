@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.Authentication"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.AuthenticationException"/>
 <fullyQualifiedTypeName name="com.bookApp.api.users.ui.models.LoginRequestModel"/>
@@ -40,7 +39,6 @@
 <fullyQualifiedTypeName name="lombok.Data"/>
 <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
 <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
 <fullyQualifiedTypeName name="com.bookApp.api.books.model.Book"/>
 <fullyQualifiedTypeName name="com.bookApp.api.books.repository.BookRepository"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.bookApp.view.model.Book"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -1,5 +1,6 @@
 package com.bookApp.api.books.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,16 +56,25 @@ public class BooksController {
 	@GetMapping("/getAllBook")
 	public List<Book> getAllBooks(){
 		List<Book> books = repo.findAll();
-		return books;
+		List<Book> bookstosend = new ArrayList<>();
+		for(int i=0;i<books.size();i++) {
+			if(books.get(i).getQuantity()>0) {
+				bookstosend.add(books.get(i));
+			}
+		}
+		return bookstosend;
 	}
 	
 	@GetMapping("/orderBook")
 	public void orderBook(@RequestParam("id") String BookId) {
-		Optional<Book> book=repo.findById(BookId);
-		Book book1  = book.get();
-		book1.setQuantity(book1.getQuantity()-1);
-		repo.deleteById(BookId);
-		repo.save(book1);
+		String[] bookids  = BookId.split(",");
+		for(int i=0;i<bookids.length;i++) {
+			Book book=repo.findById(bookids[i]).get();
+			book.setQuantity(book.getQuantity()-1);
+			repo.deleteById(bookids[i]);
+			repo.save(book);
+		}
 		
 	}
+	
 }
