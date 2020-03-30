@@ -1305,3 +1305,73 @@ java.lang.NullPointerException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.ui 2 2 2020-03-30 20:44:08.815
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.731
+!MESSAGE Preparing classpath changed notification BookAppApiBooks
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.732
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.736
+!MESSAGE classpath=187 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.739
+!MESSAGE buffering callback sts4.classpath.REttgpWZ BookAppApiBooks false 187
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.739
+!MESSAGE executing callback sts4.classpath.REttgpWZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:55.792
+!MESSAGE executing callback sts4.classpath.REttgpWZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.915
+!MESSAGE Preparing classpath changed notification BookAppApiBooks
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.915
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.918
+!MESSAGE classpath=187 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.920
+!MESSAGE buffering callback sts4.classpath.REttgpWZ BookAppApiBooks false 187
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.921
+!MESSAGE executing callback sts4.classpath.REttgpWZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:13:59.930
+!MESSAGE executing callback sts4.classpath.REttgpWZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.025
+!MESSAGE Preparing classpath changed notification BookAppApiOrder
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.028
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.031
+!MESSAGE classpath=186 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.033
+!MESSAGE buffering callback sts4.classpath.REttgpWZ BookAppApiOrder false 186
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.033
+!MESSAGE executing callback sts4.classpath.REttgpWZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-03-30 23:19:26.079
+!MESSAGE executing callback sts4.classpath.REttgpWZ SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2020-03-31 01:09:54.987
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1915)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)

@@ -1,11 +1,15 @@
 package com.bookApp.api.books.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookApp.api.books.model.Book;
+import com.bookApp.api.books.model.BooksQuantity;
 import com.bookApp.api.books.repository.BookRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/books")
@@ -67,14 +73,24 @@ public class BooksController {
 	
 	@GetMapping("/orderBook")
 	public void orderBook(@RequestParam("id") String BookId) {
-		String[] bookids  = BookId.split(",");
-		for(int i=0;i<bookids.length;i++) {
-			Book book=repo.findById(bookids[i]).get();
-			book.setQuantity(book.getQuantity()-1);
-			repo.deleteById(bookids[i]);
+		Optional<Book> book=repo.findById(BookId);
+		Book book1  = book.get();
+		book1.setQuantity(book1.getQuantity()-1);
+		repo.deleteById(BookId);
+		repo.save(book1);
+	}
+	
+	@PostMapping(value="/orderCart")
+	public void orderCart(@RequestBody Map<String,String> map) throws Exception{
+		//HashMap<String,String> map = new ObjectMapper().readValue(string, HashMap.class);
+		Set<String> set = map.keySet();
+		for(String e: set) {
+			Book book = repo.findById(e).get();
+			int c= Integer.parseInt(map.get(e));
+			book.setQuantity(book.getQuantity()-c);
 			repo.save(book);
 		}
-		
+//		return ResponseEntity.accepted().body("done");
 	}
 	
 }

@@ -9,6 +9,11 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,12 +26,14 @@ import com.bookApp.api.order.model.Cart;
 import com.bookApp.api.order.model.Orders;
 import com.bookApp.api.order.repo.CartRepository;
 import com.bookApp.api.order.repo.OrderRepository;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @RestController
 @RequestMapping("/cart")
 public class CartController {
 	
-	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderBook?id=";
+	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderCart";
 	private static final Object String = null;
 
 	@Autowired
@@ -111,8 +118,10 @@ public class CartController {
 		order.setBookIds(bookids);
 		orderrepo.save(order);
 		RestTemplate rt = new RestTemplate();
-		//rt.postForEntity(ORDER_BOOK_ENDPOINT_URL, String, String.class);
-		
-			
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		HttpEntity<?> entity = new HttpEntity<>(map,headers);
+		ResponseEntity<Object> responseEntity=rt.exchange(ORDER_BOOK_ENDPOINT_URL, HttpMethod.POST, entity, Object.class);
+		repo.deleteById(userid);
 	}
 }
