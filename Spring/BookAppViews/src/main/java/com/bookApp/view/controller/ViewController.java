@@ -4,10 +4,11 @@ package com.bookApp.view.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.bookApp.view.model.Book;
-import com.bookApp.view.model.BookResponse;
+import com.bookApp.view.model.CartResponse;
+import com.bookApp.view.model.Quantity;
 import com.bookApp.view.model.User;
 import com.bookApp.view.model.UserLogin;
 import com.google.gson.Gson;
@@ -42,6 +44,8 @@ public class ViewController {
 	private static final String GET_ALL_BOOKS_ENDPOINT_URL ="http://localhost:8011/books-ws/books/getAllBook";
 	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderBook?id=";
 	private static final String GENERATE_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/addOrder?userid=";
+	private static final String ADD_TO_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/add?id=";
+	private static final String GET_USER_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/getCart?id=";
 	private static final Object String = null;
 	
 	
@@ -247,7 +251,7 @@ public class ViewController {
 	
 //	User View Books
 	@GetMapping(value="/user/showBooks")
-	public String showBooks(Model model) {
+	public String showBooks(Model model,Quantity quantity) {
 		RestTemplate rt = new RestTemplate();
 		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL,HttpMethod.GET, null, new ParameterizedTypeReference<List<Book>>() {});
 		List<Book> books = response.getBody();
@@ -261,6 +265,42 @@ public class ViewController {
 		rt.getForObject(ORDER_BOOK_ENDPOINT_URL + bookid, String.class);
 		rt.postForObject(GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + bookid, String ,String.class);
 		return "redirect:http://localhost:8011/views-ws/user/showBooks";
+	}
+	
+	@GetMapping(value="/user/adding")
+	public String addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid, @RequestParam("count") String count, Quantity quantity) {
+		RestTemplate rt = new RestTemplate();
+		rt.postForObject(ADD_TO_CART_ENDPOINT_URL+userId+"&bookid="+bookid+"&count="+count, String, String.class);
+		return "redirect:http://localhost:8011/views-ws/user/showBooks";
+		
+	}
+	
+//	User Cart
+	@GetMapping("/user/cart")
+	public String showCart(@RequestParam("userid") String id,Model model) {
+		RestTemplate rt = new RestTemplate();
+		Map<String,String> map = rt.getForObject(GET_USER_CART_ENDPOINT_URL+id, Map.class);
+		Set<String> set = map.keySet();
+		List<CartResponse> cartBooks = new ArrayList<>();
+		int total=0;
+		for(String e:set) {
+			Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL+e, Book.class);
+			CartResponse cart = new CartResponse();
+			cart.setAuthor(book.getAuthor());
+			cart.setDescription(book.getDescription());
+			cart.setName(book.getName());
+			cart.setPrice(book.getPrice());
+			cart.setQuantity(map.get(e));
+			int subtotal= Integer.parseInt(book.getPrice())*Integer.parseInt(map.get(e));
+			cart.setSubtotal(Integer.toString(subtotal));
+			cartBooks.add(cart);
+		}
+		for(CartResponse cart: cartBooks) {
+			total=total+Integer.parseInt(cart.getSubtotal());
+		}
+		model.addAttribute("total", total);
+		model.addAttribute("books", cartBooks);
+		return "user-cart-view";
 	}
 
 }

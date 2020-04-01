@@ -32,87 +32,66 @@ import com.google.gson.GsonBuilder;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
-	
+
 	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderCart";
 	private static final Object String = null;
 
 	@Autowired
 	CartRepository repo;
-	
+
 	@Autowired
 	OrderRepository orderrepo;
-	
+
 	@PostMapping("/add")
-	public void addCart(@RequestParam("id") String userId,@RequestParam("bookid") String bookid) {
-		Cart cart = new Cart();
+	public void addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,
+			@RequestParam("count") String count) {
+
 		UUID userid = UUID.fromString(userId);
-		cart.setUserid(userid);
-		Map<String,String> map = new HashMap<>();
-		String[] bids = bookid.split(",");
-		for(int i=0;i<bids.length;i++) {
-			System.out.println(bids[i]);
-			if(!map.containsKey(bids[i])){
-				map.put(bids[i], "1");
+		try {
+			Cart cart = repo.findById(userid).get();
+			Map<String, String> map = cart.getBookquantity();
+			if (!map.containsKey(bookid)) {
+				map.put(bookid, count);
+				cart.setBookquantity(map);
+				repo.save(cart);
+			} else {
+				System.out.println(Integer.toString(Integer.parseInt(map.get(bookid)) + Integer.parseInt(count)));
+				map.put(bookid, Integer.toString(Integer.parseInt(map.get(bookid)) + Integer.parseInt(count)));
+				cart.setBookquantity(map);
+				repo.save(cart);
 			}
-			cart.setBookquantity(map);
-			repo.save(cart);
+		} catch (Exception e) {
+			Cart cart = new Cart();
+			cart.setUserid(userid);
+			Map<String, String> map = new HashMap<>();
+			if (!map.containsKey(bookid)) {
+				map.put(bookid, count);
+				cart.setBookquantity(map);
+				repo.save(cart);
+			}
 		}
+
 	}
-	
-	@PostMapping("/inc")
-	public void increaseQuantity(@RequestParam("bookid") String bookid, @RequestParam("id") String userid) {
-		UUID userId = UUID.fromString(userid);
-		Cart cart = repo.findById(userId).get();
-		Map<String,String> map = new HashMap<>();
-		map = cart.getBookquantity();
-		int c = Integer.parseInt(map.get(bookid));
-		c++;
-		String count = Integer.toString(c);
-		map.put(bookid, count);
-		cart.setBookquantity(map);
-		repo.save(cart);
-		
-	}
-	
-	@PostMapping("/dec")
-	public void decreaseQuantity(@RequestParam("bookid") String bookid, @RequestParam("id") String userid) {
-		UUID userId = UUID.fromString(userid);
-		Cart cart = repo.findById(userId).get();
-		Map<String,String> map = new HashMap<>();
-		map = cart.getBookquantity();
-		int c = Integer.parseInt(map.get(bookid));
-		c--;
-		if(c>0) {
-			String count = Integer.toString(c);
-			map.put(bookid, count);
-			cart.setBookquantity(map);
-		}
-		else {
-			map.remove(bookid);
-		}
-		repo.save(cart);
-	}
-	
+
 	@DeleteMapping("/emptyCart")
 	public void emptyCart(@RequestParam("id") String userId) {
 		UUID userid = UUID.fromString(userId);
 		repo.deleteById(userid);
-		
+
 	}
-	
-	
+
 	@GetMapping("/orderCart")
 	public void orderCart(@RequestParam("id") String userId) {
 		UUID userid = UUID.fromString(userId);
-		Cart cart= repo.findById(userid).get();
+		Cart cart = repo.findById(userid).get();
 		Orders order = new Orders();
 		order.setUserid(userid);
 		order.setOrderid(UUID.randomUUID());
-		Map<String,String> map = new HashMap<>();
+		Map<String, String> map = new HashMap<>();
 		map = cart.getBookquantity();
-		Set<String> items =   map.keySet();
+		Set<String> items = map.keySet();
 		List<String> bookids = new ArrayList<>();
-		for (String e : items ) {
+		for (String e : items) {
 			bookids.add(e);
 		}
 		order.setBookIds(bookids);
@@ -120,8 +99,18 @@ public class CartController {
 		RestTemplate rt = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		HttpEntity<?> entity = new HttpEntity<>(map,headers);
-		ResponseEntity<Object> responseEntity=rt.exchange(ORDER_BOOK_ENDPOINT_URL, HttpMethod.POST, entity, Object.class);
+		HttpEntity<?> entity = new HttpEntity<>(map, headers);
+		ResponseEntity<Object> responseEntity = rt.exchange(ORDER_BOOK_ENDPOINT_URL, HttpMethod.POST, entity,
+				Object.class);
 		repo.deleteById(userid);
+	}
+	
+	@GetMapping("/getCart")
+	public Map<String,String> getCart(@RequestParam("id") String userId) {
+		UUID userid = UUID.fromString(userId);
+		Cart cart = repo.findById(userid).get();
+		return cart.getBookquantity();
+		
+		
 	}
 }
