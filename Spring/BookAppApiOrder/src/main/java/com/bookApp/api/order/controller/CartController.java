@@ -89,12 +89,7 @@ public class CartController {
 		order.setOrderid(UUID.randomUUID());
 		Map<String, String> map = new HashMap<>();
 		map = cart.getBookquantity();
-		Set<String> items = map.keySet();
-		List<String> bookids = new ArrayList<>();
-		for (String e : items) {
-			bookids.add(e);
-		}
-		order.setBookIds(bookids);
+		order.setBookIds(map);
 		orderrepo.save(order);
 		RestTemplate rt = new RestTemplate();
 		HttpHeaders headers = new HttpHeaders();
@@ -110,7 +105,16 @@ public class CartController {
 		UUID userid = UUID.fromString(userId);
 		Cart cart = repo.findById(userid).get();
 		return cart.getBookquantity();
-		
-		
+	}
+	
+	@DeleteMapping("/deletefromcart")
+	public String deleteFromCart(@RequestParam("id") String userId,@RequestParam("bookid") String bookid) {
+		UUID userid = UUID.fromString(userId);
+		Cart cart = repo.findById(userid).get();
+		Map<String,String> map = cart.getBookquantity();
+		map.remove(bookid);
+		cart.setBookquantity(map);
+		repo.save(cart);
+		return null;
 	}
 }

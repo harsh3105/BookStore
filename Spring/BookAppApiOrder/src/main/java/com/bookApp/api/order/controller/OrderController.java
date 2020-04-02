@@ -1,7 +1,9 @@
 package com.bookApp.api.order.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -39,12 +41,10 @@ public class OrderController {
 		order.setOrderid(id);
 		UUID userid = UUID.fromString(userId);
 		order.setUserid(userid);
-		List<String> bookids = new ArrayList<>();
-		String[] bookid = bookId.split(",");
-		for(int i=0;i<bookid.length;i++) {
-			bookids.add(bookid[i]);
-		}
-		order.setBookIds(bookids);
+		String[] s = bookId.split("=");
+		Map<String,String> map = new HashMap<>();
+		map.put(s[0], s[1]);
+		order.setBookIds(map);
 		repo.save(order);
 		return "done";
 	}

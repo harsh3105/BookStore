@@ -1,6 +1,7 @@
 package com.bookApp.api.order.model;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
@@ -13,7 +14,7 @@ public class Orders {
 	
 	private UUID orderid;
 	private UUID userid;
-	private List<String> bookIds;
+	private Map<String,String> bookIds;
 	
 	
 	public UUID getOrderid() {
@@ -28,12 +29,13 @@ public class Orders {
 	public void setUserid(UUID userid) {
 		this.userid = userid;
 	}
-	public List<String> getBookIds() {
+	public Map<String, String> getBookIds() {
 		return bookIds;
 	}
-	public void setBookIds(List<String> bookId) {
-		this.bookIds = bookId;
+	public void setBookIds(Map<String, String> bookIds) {
+		this.bookIds = bookIds;
 	}
+	
 	
 
 }

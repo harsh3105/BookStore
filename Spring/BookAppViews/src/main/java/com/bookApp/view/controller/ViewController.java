@@ -46,6 +46,8 @@ public class ViewController {
 	private static final String GENERATE_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/addOrder?userid=";
 	private static final String ADD_TO_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/add?id=";
 	private static final String GET_USER_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/getCart?id=";
+	private static final String ORDER_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/orderCart?id=";
+	private static final String DELETE_BOOK_FROM_CART_ENDPOINT_URL= "http://localhost:8011/orders-ws/cart/deletefromcart?id=";
 	private static final Object String = null;
 	
 	
@@ -262,8 +264,9 @@ public class ViewController {
 	@GetMapping(value="/user/ordering")
 	public String orderBook(@RequestParam("id") String bookid,@RequestParam("userid") String userid) {
 		RestTemplate rt = new RestTemplate();
+		String c = bookid +"=1";
 		rt.getForObject(ORDER_BOOK_ENDPOINT_URL + bookid, String.class);
-		rt.postForObject(GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + bookid, String ,String.class);
+		rt.postForObject(GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + c, String ,String.class);
 		return "redirect:http://localhost:8011/views-ws/user/showBooks";
 	}
 	
@@ -286,6 +289,7 @@ public class ViewController {
 		for(String e:set) {
 			Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL+e, Book.class);
 			CartResponse cart = new CartResponse();
+			cart.setBookId(book.getBookId());
 			cart.setAuthor(book.getAuthor());
 			cart.setDescription(book.getDescription());
 			cart.setName(book.getName());
@@ -302,5 +306,22 @@ public class ViewController {
 		model.addAttribute("books", cartBooks);
 		return "user-cart-view";
 	}
+	
+	//Order Cart
+	@GetMapping("/user/ordercart")
+	public String orderCart(@RequestParam("id") String userId) {
+		RestTemplate rt = new RestTemplate();
+		rt.getForObject(ORDER_CART_ENDPOINT_URL+userId, String.class);
+		return "redirect:http://localhost:8011/views-ws/user/showBooks";
+	}
+	
+	//Delete from cart
+	@GetMapping("/user/deleteFromCart")
+	public String deleteFromCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid) {
+		RestTemplate rt = new RestTemplate();
+		rt.delete(DELETE_BOOK_FROM_CART_ENDPOINT_URL+userId+"&bookid="+bookid);
+		return "redirect:http://localhost:8011/views-ws/user/cart?userid="+userId;
+	}
+	
 
 }

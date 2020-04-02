@@ -83,7 +83,7 @@
                     <td><span th:text="${books.Price}"></span></td>
                     <td><span th:text="${books.Quantity}"></span></td>
                     <td><span th:text="${books.Subtotal}"></span></td>
-                    <td><a class="btn btn-danger">Delete</a></td>
+                    <td><a th:href="@{deleteFromCart(bookid=${books.bookId},id='9989fe96-d6bf-42f7-afeb-7d9f28a2d523')}" class="btn btn-danger">Delete</a></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -93,6 +93,16 @@
                     <td></td>
                     <td>Total</td>
                     <td><span th:text="${total}"></span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a th:href="@{ordercart(id='9989fe96-d6bf-42f7-afeb-7d9f28a2d523')}" class="btn btn-success">Order</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td></td>
                 </tr>
             </tbody>

@@ -2,6 +2,7 @@ package com.bookApp.view.model;
 
 public class CartResponse {
 	
+	private String bookId;
 	private String name;
 	private String description;	
 	private String author;
@@ -52,6 +53,12 @@ public class CartResponse {
 	}
 	public void setTotal(String total) {
 		this.total = total;
+	}
+	public String getBookId() {
+		return bookId;
+	}
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
 
 }
