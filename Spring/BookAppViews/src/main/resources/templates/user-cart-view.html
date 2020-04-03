@@ -2,13 +2,52 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>Sign Up</title>
+    <title>Cart</title>
 
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- custom CSS file  -->
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <style>
+        body {
+            background: #f5683d;
+
+        }
+
+        form {
+            background: white;
+        }
+
+        .section-padding {
+            padding-top: 2vh !important;
+        }
+
+        .book-padding {
+            padding-top: 0.45vh !important;
+        }
+
+        section {
+            padding-top: 4vh;
+        }
+
+        .form-container {
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px 0px;
+        }
+
+        .bg-img {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            top: 30px;
+            left: 38%;
+        }
+
+        .bg-orange {
+            background: #f5683d;
+        }
+    </style>
     </style>
 </head>
 
@@ -24,7 +63,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-
     <!-- NavBar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-orange">
         <a class="navbar-brand" href="#">BookStore</a>
@@ -34,17 +72,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link" th:href="@{showBooks}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/views-ws/user/cart?userid=9989fe96-d6bf-42f7-afeb-7d9f28a2d523}">Cart</a>
+                    </li>
+                </ul>
+            </span>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -75,7 +123,7 @@
                     <td colspan="2"> No Books Available </td>
                 </tr>
                 <tr th:each="books : ${books}">
-                    <td><img src="images/math.jpg" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block"
+                    <td><img th:src="@{https://images-na.ssl-images-amazon.com/images/I/918O3XZAW9L.jpg}" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block"
                             width="150" height="200"></td>
                     <td><span th:text="${books.Name}"></span></td>
                     <td><span th:text="${books.Description}"></span></td>

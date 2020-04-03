@@ -50,9 +50,21 @@ public class OrderController {
 	}
 	
 	@GetMapping("/getOrder")
-	public Optional<Orders> getOrder(@RequestParam("id") UUID id){
-		Optional<Orders> order=repo.findByorderid(id);
-		return order;
+	public List<String> getOrder(@RequestParam("id") String id){
+		UUID userId = UUID.fromString(id);
+		List<Orders> order = repo.findByuserid(userId);
+		List<String> s = new ArrayList<>();
+		for(Orders e: order) {
+			s.add(e.getOrderid().toString());
+		}
+		return s;
+	}
+	
+	@GetMapping("/getBooks")
+	public Map<String,String> getMap(@RequestParam("orderid")String orderid){
+		UUID id = UUID.fromString(orderid);
+		Orders order = repo.findByorderid(id);
+		return order.getBookIds();
 	}
 	
 	@PostMapping("/updateOrder")

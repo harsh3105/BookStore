@@ -10,60 +10,6 @@
     <!-- custom CSS file  -->
     <link rel="stylesheet" type="text/css" href="css/global.css">
     <style>
-        .background {
-            background-color: transparent;
-        }
-
-        .value-button {
-            display: inline-block;
-            border: 2px solid #ddd;
-            margin: 0px;
-            width: 40px;
-            text-align: center;
-            vertical-align: middle;
-            padding: 11px 0;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        .value-button:hover {
-            cursor: pointer;
-        }
-
-        form #decrease {
-            margin-right: -4px;
-            border-radius: 8px 0 0 8px;
-        }
-
-        form #increase {
-            margin-left: -4px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        form #input-wrap {
-            margin: 0px;
-            padding: 0px;
-        }
-
-        input#number {
-            text-align: center;
-            border: none;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-            margin: 0px;
-            width: 40px;
-            height: 40px;
-        }
-
-        input[type=number]::-webkit-inner-spin-button,
-        input[type=number]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
     </style>
 </head>
 
@@ -89,17 +35,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Orders</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Cart</a>
+                    </li>
+                </ul>
+            </span>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -126,7 +82,7 @@
             </thead>
             <tbody>
                 <tr id="row" class="something">
-                    <td><img src="images/math.jpg" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block"
+                    <td><img th:src="@{https://images-na.ssl-images-amazon.com/images/I/918O3XZAW9L.jpg}" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block"
                             width="150" height="200"></td>
                     <td>Maths</td>
                     <td>blah blah blah blah balh balh blah blah blah blah blah blah blah balh balh blah </td>
