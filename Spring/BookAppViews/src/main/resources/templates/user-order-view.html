@@ -109,6 +109,8 @@
             <thead>
                 <tr>
                     <th scope="col">OrderID</th>
+                    <th scope="col">Order</th>
+                    <th scope="col">Amount</th>
                 </tr>
             </thead>
             <tbody>
@@ -118,6 +120,7 @@
                 <tr th:each="order : ${order}">
                     <td><span th:text="${order.orderid}"></span></td>
                     <td><span th:text="${order.count}" ></span></td>
+                    <td><span th:text="${order.total}" ></span></td>
                 </tr>
             </tbody>
         </table>

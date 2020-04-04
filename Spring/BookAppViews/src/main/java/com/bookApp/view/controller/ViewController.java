@@ -337,12 +337,17 @@ public class ViewController {
 			o.setOrderid(l);
 			Map<String,String> get = rt.getForObject(GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
 			String f = "";
+			int total =0;
 			Set<String> set = get.keySet();
 			for(String s:set) {
-				f=f+s+":"+get.get(s)+"\n";
+				Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL+s, Book.class);
+				f=f+book.getName()+" : "+get.get(s)+"\n";
+				total = total+Integer.parseInt(book.getPrice())*Integer.parseInt(get.get(s));
 			}
 			o.setCount(f);
+			o.setTotal(total);
 			order.add(o);
+			
 			//System.out.println(get);
 		}
 
