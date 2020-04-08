@@ -5,15 +5,24 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.bookApp.view.model.Book;
@@ -21,6 +30,7 @@ import com.bookApp.view.model.CartResponse;
 import com.bookApp.view.model.Order;
 import com.bookApp.view.model.Quantity;
 import com.bookApp.view.model.User;
+import com.bookApp.view.model.UserDetail;
 import com.bookApp.view.model.UserLogin;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,6 +62,12 @@ public class ViewController {
 	private static final Object String = null;
 
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	
+	@GetMapping("/apple")
+	public String apple(HttpSession session) {
+		session.setAttribute("harsh", "harsh");
+		return "done";
+	}
 
 //	Signup page
 
@@ -72,17 +88,29 @@ public class ViewController {
 	}
 
 //	Login page
-
 	@GetMapping("/login")
-	public String ShowLogin(UserLogin details, Model model, BindingResult bindingResult) {
+	public String ShowLogin(UserLogin details, Model model, BindingResult bindingResult,HttpServletResponse resp,HttpServletRequest req) {
 		model.addAttribute("details", details);
 		return "loginpage";
 	}
-
-	@PostMapping(value = "/check", produces = "application/json")
-	private String login(UserLogin details) {
+	
+	
+	@RequestMapping(value = "/check", produces = "application/json")
+	private String login(UserLogin details,HttpServletResponse resp,HttpServletRequest req,Model model,Quantity quantity) {
 		RestTemplate rt = new RestTemplate();
-		UserLogin u = rt.postForObject(LOGIN_USER_ENDPOINT_URL, details, UserLogin.class);
+		HttpHeaders s = rt.postForEntity(LOGIN_USER_ENDPOINT_URL, details, String.class).getHeaders();
+		String a = s.toString();
+		String id = a.substring(a.indexOf("userid")+8, a.indexOf("token")-3);
+		System.out.println(id);
+		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
+				new ParameterizedTypeReference<List<Book>>() {
+				});
+		List<Book> books = response.getBody();
+		model.addAttribute("books", books);
+		Cookie cookie = new Cookie("id",id);
+		cookie.setMaxAge(1000000000);
+		cookie.setPath("/");
+		resp.addCookie(cookie);
 		return "done";
 	}
 
@@ -252,13 +280,16 @@ public class ViewController {
 
 //	User View Books
 	@GetMapping(value = "/user/showBooks")
-	public String showBooks(Model model, Quantity quantity) {
+	public String showBooks(Model model, Quantity quantity, Authentication authentication) {
 		RestTemplate rt = new RestTemplate();
 		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<Book>>() {
 				});
 		List<Book> books = response.getBody();
 		model.addAttribute("books", books);
+		String name = authentication.getName();
+		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		model.addAttribute("id", u.getUserid());
 		return "user-view-all";
 	}
 
@@ -273,11 +304,14 @@ public class ViewController {
 
 	@GetMapping(value = "/user/adding")
 	public String addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,
-			@RequestParam("count") String count, Quantity quantity) {
+			@RequestParam("count") String count, Quantity quantity,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
 		rt.postForObject(ADD_TO_CART_ENDPOINT_URL + userId + "&bookid=" + bookid + "&count=" + count, String,
 				String.class);
-		return "redirect:http://localhost:8011/views-ws/user/showBooks";
+		StringBuffer url = request.getRequestURL();
+		System.out.println(url.subSequence(0, url.lastIndexOf("/")));
+		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
+		//return "user-view-all";
 
 	}
 

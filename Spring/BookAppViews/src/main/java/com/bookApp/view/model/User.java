@@ -1,8 +1,5 @@
 package com.bookApp.view.model;
 
-import java.util.Date;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;

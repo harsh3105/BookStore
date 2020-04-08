@@ -35,13 +35,13 @@ public class UserServiceImpl implements UsersService{
 
 	@Override
 	public UserDTO createUser(UserDTO userdetails) {
-		userdetails.setUserID(UUID.randomUUID().toString());
-		userdetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));
+		userdetails.setUserid(UUID.randomUUID().toString());
+		userdetails.setEncryptedPassword(userdetails.getPassword());
 		ModelMapper modelmapper = new ModelMapper();
 		modelmapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserEntity userEntity = modelmapper.map(userdetails, UserEntity.class);
 		
-		
+		userEntity.setUserID(userdetails.getUserid());
 		repo.save(userEntity);
 		
 		UserDTO returnedValue = modelmapper.map(userEntity, UserDTO.class);
@@ -65,9 +65,12 @@ public class UserServiceImpl implements UsersService{
 	public UserDTO getUserDetailsByUsername(String username) {
 		UserEntity userEntity=repo.findByUsername(username);
 		if(userEntity==null) throw new UsernameNotFoundException(username);
-		
-		
-		return new ModelMapper().map(userEntity,UserDTO.class);
+		System.out.println(userEntity.getUserID());
+		ModelMapper modelmap = new ModelMapper();
+		UserDTO u = modelmap.map(userEntity,UserDTO.class);
+		System.out.println(u.getUserid()+"harshu");
+		u.setPassword(userEntity.getEncryptedPassword());
+		return u;
 	}
 
 
@@ -75,10 +78,10 @@ public class UserServiceImpl implements UsersService{
 	@Override
 	public UserDTO updateUser(UserDTO userdetails) {
 	
-		String id = getUserDetailsByUsername(userdetails.getUsername()).getUserID();
+		String id = getUserDetailsByUsername(userdetails.getUsername()).getUserid();
 		System.out.println(id);
 		repo.deleteByUserID(id);
-		userdetails.setUserID(id);
+		userdetails.setUserid(id);
 		userdetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));
 		ModelMapper modelmapper = new ModelMapper();
 		modelmapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
@@ -97,7 +100,7 @@ public class UserServiceImpl implements UsersService{
 	@Override
 	public void deleteUser(String username) {
 		
-		String id = getUserDetailsByUsername(username).getUserID();
+		String id = getUserDetailsByUsername(username).getUserid();
 		repo.deleteByUserID(id);
 		
 	}

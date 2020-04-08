@@ -14,11 +14,10 @@ public class UserDTO implements Serializable{
 	private String username;
 	private String email;
 	private String password;
-	private LocalDate dob;
 	private String address;
 	private String name;
 	private String phone;
-	private String userID;
+	private String userid;
 	private String encryptedPassword;
 	
 	public String getUsername() {
@@ -39,12 +38,6 @@ public class UserDTO implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public LocalDate getDob() {
-		return dob;
-	}
-	public void setDob(LocalDate a) {
-		this.dob = a;
-	}
 	public String getAddress() {
 		return address;
 	}
@@ -63,17 +56,17 @@ public class UserDTO implements Serializable{
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getUserID() {
-		return userID;
-	}
-	public void setUserID(String userID) {
-		this.userID = userID;
-	}
 	public String getEncryptedPassword() {
 		return encryptedPassword;
 	}
 	public void setEncryptedPassword(String encryptedPassword) {
 		this.encryptedPassword = encryptedPassword;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	
 }

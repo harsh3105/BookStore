@@ -35,6 +35,7 @@ public class UserEntity implements Serializable{
 	private String phone;
 	@Column
 	private String encryptedPassword;
+	
 	public String getUserID() {
 		return userID;
 	}
