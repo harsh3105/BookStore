@@ -340,17 +340,24 @@ public class ViewController {
 	public String addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,
 			@RequestParam("count") String count, Quantity quantity,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
+		if(Integer.parseInt(count)<=0) {
+			StringBuffer url = request.getRequestURL();
+			return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
+		}
+		else {
 		rt.postForObject(ADD_TO_CART_ENDPOINT_URL + userId + "&bookid=" + bookid + "&count=" + count, String,
 				String.class);
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
+		}
 		//return "user-view-all";
 
 	}
 
 //	User Cart
 	@GetMapping("/user/cart")
-	public String showCart(@RequestParam("userid") String id, Model model) {
+	public String showCart(@RequestParam("userid") String id, Model model,HttpServletRequest request) {
+		try {
 		RestTemplate rt = new RestTemplate();
 		Map<String, String> map = rt.getForObject(GET_USER_CART_ENDPOINT_URL + id, Map.class);
 		Set<String> set = map.keySet();
@@ -376,6 +383,11 @@ public class ViewController {
 		model.addAttribute("total", total);
 		model.addAttribute("books", cartBooks);
 		return "user-cart-view";
+		}
+		catch(Exception e) {
+			StringBuffer url = request.getRequestURL();
+			return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/emptyCart";
+		}
 	}
 
 	// Order Cart
@@ -427,4 +439,14 @@ public class ViewController {
 		return "user-order-view";
 	}
 
+	
+//	Get Empty Cart
+	@GetMapping("/user/emptyCart")
+	public String emptyCart(Authentication a,Model model) {
+		RestTemplate rt = new RestTemplate();
+		String name = a.getName();
+		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		model.addAttribute("id", u.getUserid());
+		return "user-empty-cart";
+	}
 }

@@ -2,9 +2,8 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>Books</title>
+    <title>Cart</title>
 
-    <meta charset="UTF-8" />
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -49,6 +48,7 @@
             background: #f5683d;
         }
     </style>
+    </style>
 </head>
 
 <body class="bg-light">
@@ -63,7 +63,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-
     <!-- NavBar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-orange">
         <a class="navbar-brand" href="#">BookStore</a>
@@ -76,7 +75,7 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/user/showBooks}">Books</a>
                 </li>
                 <li class="nav-item">
@@ -89,10 +88,13 @@
             </ul>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            th:href="@{'/user/cart?userid='+ ${id}}">Cart</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{'/user/cart?userid='+ ${id}}">Cart</a>
                     </li>
+                </ul>
+            </span>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/logout}">Logout</a>
                     </li>
@@ -112,31 +114,13 @@
                     <th scope="col">Author</th>
                     <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">Add to Cart</th>
-                    <th scope="col">Order</th>
+                    <th scope="col">Sub-Total</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${books}==null">
-                    <td colspan="2"> No Books Available </td>
-                </tr>
-                <tr th:each="books : ${books}">
-                    <td><img th:src="@{https://images-na.ssl-images-amazon.com/images/I/918O3XZAW9L.jpg}" alt="image" class="img-thumbnail img-fluid rounded mx-auto d-block"
-                            width="150" height="200"></td>
-                    <td><span th:text="${books.Name}"></span></td>
-                    <td><span th:text="${books.Description}"></span></td>
-                    <td><span th:text="${books.Author}"></span></td>
-                    <td><span th:text="${books.Price}"></span></td>
-                    <form th:action="@{/user/adding}" th:object=${quantity} method="GET">
-                        <td>
-                            <input type="text" th:value="1"  th:attr="name='count'">
-                            <input type="hidden" th:value=${books.bookId} th:attr="name='bookid'">
-                            <input type="hidden" th:value=${id} th:attr="name='id'">
-                        </td>
-                        <td><button type="submit" class="btn btn-danger">Add to Cart</button></td>
-                    </form>
-                    <td><a th:href="@{ordering(id=${books.bookId},userid=${id})}"
-                            class="btn btn-success">Order</a></td>
+                <tr >
+                    <td colspan="2"> Cart is Empty </td>
                 </tr>
             </tbody>
         </table>
