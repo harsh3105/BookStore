@@ -76,10 +76,10 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{showBooks}">Books</a>
+                    <a class="nav-link" th:href="@{/user/showBooks}">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link active" th:href="@{'/user/orders?id='+ ${id}}">Orders</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -88,15 +88,15 @@
             </ul>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" th:href="@{/views-ws/user/cart?userid=9989fe96-d6bf-42f7-afeb-7d9f28a2d523}">Cart</a>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{'/user/cart?userid='+ ${id}}">Cart</a>
                     </li>
                 </ul>
             </span>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" th:href="@{/logout}">Logout</a>
                     </li>
                 </ul>
             </span>

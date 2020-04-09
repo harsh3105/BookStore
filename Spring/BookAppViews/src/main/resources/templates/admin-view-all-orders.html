@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>Find Book</title>
+    <title>Orders</title>
 
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -48,6 +48,7 @@
             background: #f5683d;
         }
     </style>
+    </style>
 </head>
 
 <body class="bg-light">
@@ -62,7 +63,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 
-
     <!-- NavBar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-orange">
         <a class="navbar-brand" href="#">BookStore</a>
@@ -72,10 +72,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/home}">Home<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" th:href="@{/admin/showOrders}">Orders<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -96,22 +96,30 @@
         </div>
     </nav>
 
-    <!-- input to find  -->
-    <section class="container-fluid book-padding">
-        <section class="row justify-content-center book-padding">
-            <section class="col-16 col-sm-16 col-md-6 book-padding">
-                <h4 class="text-center font-weight-bold">View Book Details</h4>
-                <form class="form-container" th:action="@{/admin/findBook1}" th:object="${book}" method="POST">
-                    <!-- BookID -->
-                    <div class="form-group ">
-                        <input type="text" class="form-control" id="bookId" th:field="*{bookId}"
-                            placeholder="Enter bookID">
-                    </div>
-                    <button type="submit" class="btn bg-orange btn-block">Find</button>
-                </form>
-            </section>
-        </section>
-    </section>
+    <!-- table  -->
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">Order</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Username</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:if="${order}==null">
+                    <td colspan="2"> No Orders Available </td>
+                </tr>
+                <tr th:each="order : ${order}">
+                    <td><span th:text="${order.orderid}"></span></td>
+                    <td><span th:text="${order.count}" ></span></td>
+                    <td><span th:text="${order.total}" ></span></td>
+                    <td><span th:text="${order.userid}" ></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

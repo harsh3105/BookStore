@@ -112,6 +112,38 @@
             </section>
         </section>
     </section>
+
+    <!-- form  -->
+
+    <section class="container-fluid book-padding" th:if="${book!=null}">
+        <section class="row justify-content-center book-padding">
+            <section class="col-16 col-sm-16 col-md-6 book-padding">
+                <form class="form-container">
+                    <div class="card mx-auto" style="width: 15rem;">
+                        <img class="card-img-top"
+                            th:src="@{https://images-na.ssl-images-amazon.com/images/I/918O3XZAW9L.jpg}"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span th:text="${book.Name}"> </h5>
+                            <p class="card-text"><span th:text="${book.Description}"> </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><span th:text="${book.bookId}"> </li>
+                            <li class="list-group-item"><span th:text="${book.Author}"> </li>
+                            <li class="list-group-item"><span th:text="${book.Category}"> </li>
+                            <li class="list-group-item"><span th:text="${book.price}"> </li>
+                            <li class="list-group-item"><span th:text="${book.year}"> </li>
+                            <li class="list-group-item"><span th:text="${book.isbn}"> </li>
+                        </ul>
+                        <div class="card-body">
+                            <a th:href="@{deleting(id=${book.bookId})}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </section>
+
 </body>
 
 </html>

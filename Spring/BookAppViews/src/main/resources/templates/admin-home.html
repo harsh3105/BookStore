@@ -73,13 +73,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" th:href="@{/admin/home}">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">User</a>
+                    <a class="nav-link" th:href="@{/admin/showOrders}">Orders<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Books</a>
+                    <a class="nav-link" th:href="@{/admin/showBooks}">Books</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -89,7 +89,7 @@
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" th:href="@{/logout}">Logout</a>
                     </li>
                 </ul>
             </span>

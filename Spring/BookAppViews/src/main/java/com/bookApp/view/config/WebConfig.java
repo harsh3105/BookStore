@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import com.bookApp.view.service.UserDetailsServiceImp;
 
@@ -22,6 +23,14 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 @EnableWebSecurity
 @Configuration
 public class WebConfig extends WebSecurityConfigurerAdapter{
+	
+	@Autowired
+	private AuthenticationSuccessHandler successHandler;
+	
+	@Autowired
+    public WebConfig(AuthenticationSuccessHandler successHandler) {
+        this.successHandler = successHandler;
+    }
 	
 	@Bean
 	  public UserDetailsService userDetailsService() {
@@ -33,7 +42,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 	    return new BCryptPasswordEncoder();
 	  };
 	
-	@Override
+	 @Autowired
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //            auth.inMemoryAuthentication()
 //            .withUser("blah")
@@ -53,9 +62,11 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/admin/**").hasRole("ADMIN")
-		.antMatchers("/user/**").hasAnyRole("ADMIN","USER")
+		.antMatchers("/user/**").hasAnyRole("USER")
 		.antMatchers("/").permitAll()
-		.and().formLogin().loginProcessingUrl("/login");
+		.and().formLogin().loginPage("/login")
+		.successHandler(successHandler).permitAll(true);
+		http.csrf().disable();
 	}
 	
 	

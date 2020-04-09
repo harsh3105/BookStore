@@ -5,6 +5,7 @@ public class Order {
 	
 	private String orderid;
 	private String count;
+	private String userid;
 	private int total;
 	
 	public String getOrderid() {
@@ -24,6 +25,12 @@ public class Order {
 	}
 	public void setTotal(int total) {
 		this.total = total;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	
 	

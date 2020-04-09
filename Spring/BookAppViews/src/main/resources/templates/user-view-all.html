@@ -77,10 +77,10 @@
                     <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" th:href="@{showBooks}">Books</a>
+                    <a class="nav-link" th:href="@{/user/showBooks}">Books</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link" th:href="@{'/user/orders?id='+ ${id}}">Orders</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -91,10 +91,10 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link"
-                            th:href="@{/views-ws/user/cart?userid='${id}'}">Cart</a>
+                            th:href="@{'/user/cart?userid='+ ${id}}">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" th:href="@{/logout}">Logout</a>
                     </li>
                 </ul>
             </span>
@@ -111,7 +111,6 @@
                     <th scope="col">Description</th>
                     <th scope="col">Author</th>
                     <th scope="col">Price</th>
-                    <th scope="col">View</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Add to Cart</th>
                     <th scope="col">Order</th>
@@ -128,7 +127,6 @@
                     <td><span th:text="${books.Description}"></span></td>
                     <td><span th:text="${books.Author}"></span></td>
                     <td><span th:text="${books.Price}"></span></td>
-                    <td><a class="btn btn-primary">View</a></td>
                     <form th:action="@{/user/adding}" th:object=${quantity} method="GET">
                         <td>
                             <input type="text" value="1" th:field="*{count}">
@@ -137,7 +135,7 @@
                         </td>
                         <td><button type="submit" class="btn btn-danger">Add to Cart</button></td>
                     </form>
-                    <td><a th:href="@{ordering(id=${books.bookId},userid='${id}')}"
+                    <td><a th:href="@{ordering(id=${books.bookId},userid=${id})}"
                             class="btn btn-success">Order</a></td>
                 </tr>
             </tbody>

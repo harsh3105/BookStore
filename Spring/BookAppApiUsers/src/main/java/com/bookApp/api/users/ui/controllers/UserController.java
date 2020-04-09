@@ -92,7 +92,12 @@ public class UserController {
 
 	}
 
-	
+	@GetMapping("/getUsername")
+	public String getUsername(@RequestParam("id") String id) {
+		String username = userservice.getUserbyID(id);
+		return username;
+
+	} 
 	
 
 

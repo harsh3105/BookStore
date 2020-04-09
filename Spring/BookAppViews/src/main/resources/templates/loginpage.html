@@ -57,17 +57,27 @@
             <section class="row justify-content-center">
                 <section class="col-12 col-sm-6 col-md-3">
                     <img th:src="@{/images/login.png}" class="bg-img">
-                        <form class="form-container" action="#" th:action="@{/views-ws/check}" th:object="${details}" method="POST">
+                        <form class="form-container" th:action="@{/login}"  method="POST">
+                            <div th:if="${param.error}">
+                                <div class="alert alert-danger">
+                                    Invalid username or password.
+                                </div>
+                            </div>
+                            <div th:if="${param.logout}">
+                                <div class="alert alert-info">
+                                    You have been logged out.
+                                </div>
+                            </div>
                             <h4 class="text-center font-weight-bold">Login Form</h4>
                             <!-- Username -->
                             <div class="form-group">
-                                <input type="text" class="form-control" id="username" th:field="*{username}" aria-describedby="nameHelp" placeholder="Enter Username">
+                                <input type="text" class="form-control" name="username" aria-describedby="nameHelp" placeholder="Enter Username">
                             </div>
                             <!-- Password -->
                             <div class="form-group">
-                                <input type="password" class="form-control" id="passowrd" th:field="*{password}" placeholder="Enter Password">
+                                <input type="password" class="form-control" name="password"  placeholder="Enter Password">
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <input type="submit" class="btn btn-primary btn-block" name="Submit">
                         </form>
                 </section>
             </section>

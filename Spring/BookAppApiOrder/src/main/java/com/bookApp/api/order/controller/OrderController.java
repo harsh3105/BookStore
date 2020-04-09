@@ -78,5 +78,21 @@ public class OrderController {
 		repo.deleteByorderid(id);
 	}
 	
+	@GetMapping("/getAllOrders")
+	public List<String> getAllOrders(){
+		List<Orders> orders = repo.findAll();
+		List<String> s = new ArrayList<>();
+		for(Orders e: orders) {
+			s.add(e.getOrderid().toString());
+		}
+		return s;
+	}
+	
+	@GetMapping("/getOrderUser")
+	public String getOrderUser(@RequestParam("id") String orderid) {
+		UUID id = UUID.fromString(orderid);
+		Orders o = repo.findByorderid(id);
+		return o.getUserid().toString();
+	}
 
 }

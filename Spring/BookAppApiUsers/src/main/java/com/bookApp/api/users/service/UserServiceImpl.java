@@ -82,11 +82,11 @@ public class UserServiceImpl implements UsersService{
 		System.out.println(id);
 		repo.deleteByUserID(id);
 		userdetails.setUserid(id);
-		userdetails.setEncryptedPassword(bCryptPasswordEncoder.encode(userdetails.getPassword()));
+		userdetails.setEncryptedPassword(userdetails.getPassword());
 		ModelMapper modelmapper = new ModelMapper();
 		modelmapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		UserEntity userEntity = modelmapper.map(userdetails, UserEntity.class);
-		
+		userEntity.setUserID(id);
 		
 		repo.save(userEntity);
 		
@@ -112,6 +112,15 @@ public class UserServiceImpl implements UsersService{
 		return getUserDetailsByUsername(username);
 		
 		
+	}
+
+
+
+	@Override
+	public String getUserbyID(String id) {
+		UUID uid = UUID.fromString(id);
+		UserEntity a = repo.findByuserID(id);
+		return a.getUsername();
 	}
 	
 	

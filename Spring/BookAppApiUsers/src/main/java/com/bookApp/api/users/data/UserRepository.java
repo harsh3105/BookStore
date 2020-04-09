@@ -14,4 +14,6 @@ public interface UserRepository extends CassandraRepository<UserEntity,UUID>{
 	@AllowFiltering
 	@Query(" DELETE FROM userentity WHERE userid=?0")
 	void deleteByUserID(String id);
+	
+	UserEntity findByuserID(String id);
 }
