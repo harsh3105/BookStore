@@ -128,10 +128,15 @@ public class ViewController {
 	public String findBook(Book book, Model model) {
 		RestTemplate rt = new RestTemplate();
 		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		if(book1==null) {
+			return "admin-delete-book";
+		}
+		else {
 		String json = gson.toJson(book1);
 		System.out.print(json);
 		model.addAttribute("book", book1);
 		return "admin-delete-book";
+		}
 	}
 
 	@GetMapping(value = "/admin/deleting")
@@ -152,12 +157,18 @@ public class ViewController {
 
 	@PostMapping(value = "/admin/findBook1")
 	public String findBook1(Book book, Model model) {
+
 		RestTemplate rt = new RestTemplate();
 		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		if(book1==null) {
+			return "admin-view-book";
+		}
+		else {
 		String json = gson.toJson(book1);
 		System.out.print(json);
 		model.addAttribute("book", book1);
 		return "admin-view-book-details";
+		}
 	}
 
 //	Admin update Book details
@@ -171,10 +182,16 @@ public class ViewController {
 	public String findBook2(Book book, Model model) {
 		RestTemplate rt = new RestTemplate();
 		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		if(book1==null) {
+			return "admin-update-book";
+		}
+		else {
 		String json = gson.toJson(book1);
 		System.out.print(json);
 		model.addAttribute("book", book1);
 		return "admin-update-book";
+		}
+		
 	}
 
 //	Admin Add User details
@@ -203,12 +220,17 @@ public class ViewController {
 
 	@PostMapping(value = "/admin/findUser")
 	public String findUser(User user, Model model) {
+		try {
 		RestTemplate rt = new RestTemplate();
 		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
 		String json = gson.toJson(user1);
 		System.out.print(json + "hvg");
 		model.addAttribute("user", user1);
 		return "admin-delete-user";
+		}
+		catch(Exception e) {
+			return "admin-delete-user";
+		}
 	}
 
 	@GetMapping(value = "/admin/deletingUser")
@@ -230,6 +252,7 @@ public class ViewController {
 
 	@PostMapping(value = "/admin/findUser2")
 	public String findUser1(User user, Model model) {
+		try {
 		System.out.println(user.getUsername());
 		RestTemplate rt = new RestTemplate();
 		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
@@ -237,6 +260,10 @@ public class ViewController {
 		System.out.print(json + "hvg");
 		model.addAttribute("user", user1);
 		return "admin-view-user";
+		}
+		catch(Exception e) {
+			return "admin-view-user";
+		}
 	}
 
 //	Admin Update User Details
@@ -248,12 +275,17 @@ public class ViewController {
 
 	@PostMapping(value = "/admin/findUser3")
 	public String findBook3(User user, Model model) {
+		try {
 		RestTemplate rt = new RestTemplate();
 		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
 		String json = gson.toJson(user1);
 		System.out.print(json);
 		model.addAttribute("user", user1);
 		return "admin-update-user";
+		}
+		catch(Exception e) {
+			return "admin-update-user";
+		}
 	}
 
 	@PostMapping(value = "/admin/updatingUser", produces = "application/json")
