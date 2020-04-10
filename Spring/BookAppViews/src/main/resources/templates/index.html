@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>BooksforUs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Cinzel:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="70" >
+
+             <nav id="scrollFeatures" class="navbar navbar-expand-lg navbar navbar-dark fixed-top bg-orange">
+                    <a class="navbar-brand" href="#">BookStore</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#homeScroll">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#aboutScroll">About</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#featuredScroll">Featured Books</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#locationScroll">Location</a>
+                              </li>
+                      </ul>
+                      <span class="navbar-text">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a th:href="@{/login}" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a th:href="@{/signup}" class="nav-link">Signup</a>
+                            </li>
+                        </ul>
+                    </span>
+                    </div>
+             </nav>
+
+                 
+        <section class="banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8">
+                            <h1 id="homeScroll">Welcome To BookStore</h1>
+                            <p>A collection of classic and modern Literature</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+
+        <section class="about">              
+                    <h2 id ="aboutScroll">About</h2>
+                </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img th:src="@{/images/02xp-books-master768.jpg}" class="about-books" alt="">
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="long-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+        </section>
+        
+
+    
+    <section class="featured-books">
+            <h2 id = "featuredScroll">Featured Books</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        
+                             <div class="card" style="width: 100%;">
+                                    <img class="card-img-top" th:src="@{/images/a game of thrones.jpg}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title">A Game of Thrones</h4>
+                                        <a href="#" class="btn btn-primary">Order now</a>
+                                    </div>
+                            </div> 
+                            
+                       
+                    </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            
+                                 <div class="card" style="width: 100%;" >
+                                        <img class="card-img-top" th:src="@{/images/prince-of-thorns.jpg}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Prince of thorns</h4>
+                                            <a href="#" class="btn btn-primary" id="button-thorn">Order now</a>
+                                        </div>
+                                </div>
+                            
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            
+                                <div class="card" style="width: 105%;">
+                                        <img class="card-img-top" th:src="@{/images/afault.jpg}" alt="Card image cap">
+                                        <div class="card-body thorn">
+                                            <h4 class="card-title">The fault in our stars</h4>                                           
+                                            <a href="#" class="btn btn-primary" >Order now</a>
+                                        </div>
+                                </div> 
+            
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-6">
+                            
+                                <div class="card" style="width: 100%;">
+                                        <img class="card-img-top" th:src="@{/images/abercrombie-01-the-blade-itself.jpg}" alt="Card image cap">
+                                        <div class="card-body">
+                                            <h4 class="card-title">The Blade Itself</h4>                                           
+                                            <a href="#" class="btn btn-primary">Order now</a>
+                                        </div>
+                                </div> 
+            
+                        </div>
+
+            </div>
+            
+     </section>
+
+     <section class="location">
+         <h1 id="locationScroll">Location</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3708.888768010551!2d72.99821441510966!3d21.629257635676225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be023fc39a285a3%3A0x14560e50e21de7f6!2sVaishali%20Society%2C%20Happy%20Nagar%2C%20Ankleshwar%2C%20Gujarat%20393001!5e0!3m2!1sen!2sin!4v1586506402343!5m2!1sen!2sin" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-md-6">
+                        <p id="location-desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+                    </div>
+                </div>
+            </div>
+     </section>
+
+     
+   
+     <footer>
+                <div class="col-md-12">
+                    <p>&copy; BookStore</p>
+                </div>
+            </div>
+
+     </footer>
+       
+          
+       
+    </body>
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script th:src="@{js/script.js}"></script>
+    
+</html>

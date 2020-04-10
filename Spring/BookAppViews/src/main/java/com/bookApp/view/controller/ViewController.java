@@ -449,4 +449,20 @@ public class ViewController {
 		model.addAttribute("id", u.getUserid());
 		return "user-empty-cart";
 	}
+	
+//	Get Index Page
+	@GetMapping("/")
+	public String indexPage() {
+		return "index";
+	}
+	
+//	Get User Home page
+	@GetMapping("/user/home")
+	public String userHome(Authentication a,Model model) {
+		RestTemplate rt = new RestTemplate();
+		String name = a.getName();
+		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		model.addAttribute("id", u.getUserid());
+		return "user-home";
+	}
 }
