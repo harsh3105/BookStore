@@ -193,7 +193,6 @@ INDEX VERSION 1.131+/Users/harshgrover/Desktop/Internship/Spring/.metadata/.plug
 3459828603.index
 68833378.index
 1486590680.index
-3345571695.index
 3102449246.index
 2937204701.index
 1051325141.index
