@@ -6,8 +6,10 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="getUser"/>
+		<item key="selection" value="findBook1"/>
 		<list key="findhistory">
+			<item value="findbook1"/>
+			<item value="user"/>
 			<item value="getUser"/>
 			<item value="jpa"/>
 			<item value="data"/>

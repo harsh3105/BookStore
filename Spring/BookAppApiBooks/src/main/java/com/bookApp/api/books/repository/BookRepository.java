@@ -1,9 +1,10 @@
 package com.bookApp.api.books.repository;
 
-import org.springframework.data.cassandra.repository.CassandraRepository;
 
-import com.bookApp.api.books.model.Book;
+import org.springframework.data.repository.CrudRepository;
 
-public interface BookRepository extends CassandraRepository<Book,String>{
+import com.bookApp.api.books.model.Books;
+
+public interface BookRepository extends CrudRepository<Books, String>{
 
 }

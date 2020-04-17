@@ -15,15 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bookApp.api.books.model.Book;
-import com.bookApp.api.books.repository.BookRepository;
+import com.bookApp.api.books.model.Books;
+import com.bookApp.api.books.services.BookService;
 
 @RestController
 @RequestMapping("/books")
 public class BooksController {
 	
 	@Autowired
-	private BookRepository repo;
+	private BookService bookService;
+	
+	 @Autowired
+	 public void setBookService(BookService bookService) {
+	        this.bookService = bookService;
+	    }
 	
 	@GetMapping("/check")
 	public String check() {
@@ -31,32 +36,32 @@ public class BooksController {
 	}
 	
 	@PostMapping(value="/addBook")
-	public void addBook(@RequestBody Book book){
+	public void addBook(@RequestBody Books book){
 		System.out.print(book.getBookId()+"skh");
-		repo.save(book);
+		bookService.save(book);
 	}
 	
 	@DeleteMapping("/deleteBook")
 	public void deleteBook(@RequestParam("id") String BookId){
-		repo.deleteById(BookId);
+		bookService.deleteById(BookId);
 	}
 	
 	@PostMapping("/updateBook")
-	public void updateBook(@RequestBody Book book) {
-		repo.deleteById(book.getBookId());
-		repo.save(book);
+	public void updateBook(@RequestBody Books book) {
+		bookService.deleteById(book.getBookId());
+		bookService.save(book);
 	}
 	
 	@GetMapping("/getBook")
-	public Optional<Book> getBook(@RequestParam("id") String BookId){
-		Optional<Book> book=repo.findById(BookId);
+	public Optional<Books> getBook(@RequestParam("id") String BookId){
+		Optional<Books> book=bookService.findById(BookId);
 		return book;
 	}
 	
 	@GetMapping("/getAllBook")
-	public List<Book> getAllBooks(){
-		List<Book> books = repo.findAll();
-		List<Book> bookstosend = new ArrayList<>();
+	public List<Books> getAllBooks(){
+		List<Books> books = (List<Books>) bookService.findAll();
+		List<Books> bookstosend = new ArrayList<>();
 		for(int i=0;i<books.size();i++) {
 			if(books.get(i).getQuantity()>0) {
 				bookstosend.add(books.get(i));
@@ -67,11 +72,11 @@ public class BooksController {
 	
 	@GetMapping("/orderBook")
 	public void orderBook(@RequestParam("id") String BookId) {
-		Optional<Book> book=repo.findById(BookId);
-		Book book1  = book.get();
+		Optional<Books> book=bookService.findById(BookId);
+		Books book1  = book.get();
 		book1.setQuantity(book1.getQuantity()-1);
-		repo.deleteById(BookId);
-		repo.save(book1);
+		bookService.deleteById(BookId);
+		bookService.save(book1);
 	}
 	
 	@PostMapping(value="/orderCart")
@@ -79,12 +84,12 @@ public class BooksController {
 		//HashMap<String,String> map = new ObjectMapper().readValue(string, HashMap.class);
 		Set<String> set = map.keySet();
 		for(String e: set) {
-			Book book = repo.findById(e).get();
+			Books book = bookService.findById(e).get();
 			int c= Integer.parseInt(map.get(e));
 			book.setQuantity(book.getQuantity()-c);
-			repo.save(book);
+			bookService.save(book);
 		}
 //		return ResponseEntity.accepted().body("done");
 	}
-	
+
 }
