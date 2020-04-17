@@ -13229,3 +13229,18 @@ Contains: Missing org.springframework.cloud:spring-cloud-starter-netflix-eureka-
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:22:43.114
 !MESSAGE executing callback sts4.classpath.NvizcxMM SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:29:10.231
+!MESSAGE Preparing classpath changed notification BookAppApiAdmin
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:29:10.232
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:29:10.232
+!MESSAGE buffering callback sts4.classpath.NvizcxMM BookAppApiAdmin true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:29:10.233
+!MESSAGE executing callback sts4.classpath.NvizcxMM 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-17 20:29:10.258
+!MESSAGE executing callback sts4.classpath.NvizcxMM SUCCESS [done]
