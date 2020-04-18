@@ -1,7 +1,6 @@
 package com.bookApp.api.order.model;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -12,7 +11,6 @@ import org.springframework.data.cassandra.core.mapping.Table;
 public class Orders {
 	
 	@PrimaryKey
-	
 	private UUID orderid;
 	private UUID userid;
 	private Map<String,String> bookIds = new HashMap<>();;
@@ -37,6 +35,4 @@ public class Orders {
 		this.bookIds = bookIds;
 	}
 	
-	
-
 }

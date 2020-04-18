@@ -1,10 +1,9 @@
-package com.bookApp.api.order.controller;
+package com.bookApp.api.order.Controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import com.bookApp.api.order.model.Orders;
 import com.bookApp.api.order.repo.OrderRepository;
 
@@ -25,8 +23,7 @@ import com.bookApp.api.order.repo.OrderRepository;
 public class OrderController {
 	
 	@Autowired
-	private OrderRepository repo;
-
+	OrderRepository repo;
 	
 	@GetMapping("/check")
 	public void check() {
@@ -80,7 +77,7 @@ public class OrderController {
 	
 	@GetMapping("/getAllOrders")
 	public List<String> getAllOrders(){
-		List<Orders> orders = repo.findAll();
+		List<Orders> orders = (List<Orders>) repo.findAll();
 		List<String> s = new ArrayList<>();
 		for(Orders e: orders) {
 			s.add(e.getOrderid().toString());
@@ -94,5 +91,4 @@ public class OrderController {
 		Orders o = repo.findByorderid(id);
 		return o.getUserid().toString();
 	}
-
 }

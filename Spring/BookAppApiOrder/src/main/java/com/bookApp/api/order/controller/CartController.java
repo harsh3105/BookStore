@@ -1,11 +1,7 @@
-package com.bookApp.api.order.controller;
+package com.bookApp.api.order.Controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +10,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,22 +22,19 @@ import com.bookApp.api.order.model.Cart;
 import com.bookApp.api.order.model.Orders;
 import com.bookApp.api.order.repo.CartRepository;
 import com.bookApp.api.order.repo.OrderRepository;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 @RestController
 @RequestMapping("/cart")
 public class CartController {
-
 	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderCart";
 	private static final Object String = null;
-
+	
 	@Autowired
 	CartRepository repo;
-
+	
 	@Autowired
 	OrderRepository orderrepo;
-
+	
 	@PostMapping("/add")
 	public void addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,
 			@RequestParam("count") String count) {
@@ -117,4 +110,5 @@ public class CartController {
 		repo.save(cart);
 		return null;
 	}
+	
 }
