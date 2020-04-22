@@ -6,8 +6,11 @@
 		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="findBook1"/>
+		<item key="selection" value="invalid"/>
 		<list key="findhistory">
+			<item value="invalidquery"/>
+			<item value="invalid"/>
+			<item value="in"/>
 			<item value="findbook1"/>
 			<item value="user"/>
 			<item value="getUser"/>

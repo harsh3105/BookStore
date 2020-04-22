@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.bookApp.view.service.userDetails"/>
-<fullyQualifiedTypeName name="javax.annotation.Resource"/>
-<fullyQualifiedTypeName name="org.springframework.web.client.RestTemplate"/>
-<fullyQualifiedTypeName name="com.bookApp.view.model.UserDetail"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.User.UserBuilder"/>
 <fullyQualifiedTypeName name="org.springframework.security.core.userdetails.UserDetailsService"/>
 <fullyQualifiedTypeName name="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
@@ -25,7 +21,6 @@
 <fullyQualifiedTypeName name="org.springframework.core.annotation.Order"/>
 <fullyQualifiedTypeName name="org.springframework.core.Ordered"/>
 <fullyQualifiedTypeName name="org.springframework.cloud.context.scope.refresh.RefreshScopeRefreshedEvent"/>
-<fullyQualifiedTypeName name="org.springframework.data.cassandra.config.AbstractCassandraConfiguration"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.config.CassandraCqlClusterFactoryBean"/>
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
 <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
@@ -37,7 +32,6 @@
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.core.convert.CassandraConverter"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.core.convert.MappingCassandraConverter"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.config.CassandraSessionFactoryBean"/>
-<fullyQualifiedTypeName name="org.springframework.data.cassandra.config.SchemaAction"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.core.CassandraOperations"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.core.CassandraTemplate"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.config.CassandraClusterFactoryBean"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="com.bookApp.api.books.repository.BookRepository"/>
 <fullyQualifiedTypeName name="org.springframework.data.cassandra.core.cql.keyspace.DataCenterReplication"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.springframework.data.cassandra.config.SchemaAction"/>
+<fullyQualifiedTypeName name="org.springframework.data.cassandra.core.cql.keyspace.DropKeyspaceSpecification"/>
+<fullyQualifiedTypeName name="org.springframework.data.cassandra.config.AbstractCassandraConfiguration"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
 </qualifiedTypeNameHistroy>
