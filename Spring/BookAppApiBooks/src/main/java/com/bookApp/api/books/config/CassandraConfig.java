@@ -64,7 +64,7 @@ public class CassandraConfig extends AbstractClusterConfiguration {
 
 		    @Override
 		    protected String getContactPoints() {
-		      return "localhost";
+		      return "cassandra";
 		    }
 
 }
