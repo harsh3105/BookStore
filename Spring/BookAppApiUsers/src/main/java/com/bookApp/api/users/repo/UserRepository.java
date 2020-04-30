@@ -16,7 +16,7 @@ public interface UserRepository extends CrudRepository<UserEntity,UUID> {
 	@AllowFiltering
 	@Query(" DELETE FROM userentity WHERE userid=?0")
 	void deleteByUserID(String id);
-
-	UserEntity findByUserID(UUID fromString);
+	
+	UserEntity findByUserID(String fromString);
 
 }

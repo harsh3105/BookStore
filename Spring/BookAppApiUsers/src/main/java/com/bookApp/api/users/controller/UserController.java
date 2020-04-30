@@ -72,7 +72,7 @@ public class UserController {
 	
 	@GetMapping("/getUsername")
 	public String getUsername(@RequestParam("id") String id) {
-		UserEntity entity= repo.findByUserID(UUID.fromString(id));
+		UserEntity entity= repo.findByUserID(id);
 		String username  =  entity.getUsername();
 		return username;
 
