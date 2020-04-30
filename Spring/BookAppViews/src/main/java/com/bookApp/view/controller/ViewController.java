@@ -39,30 +39,53 @@ import com.google.gson.JsonObject;
 @Controller
 public class ViewController {
 
+//	// admin
+//	private static final String CREATE_USER_ENDPOINT_URL = "http://users:2222/users/addUser";
+//	private static final String ADD_BOOK_ENDPOINT_URL = "http://books:2222/books/addBook";
+//	private static final String GET_BOOK_ENDPOINT_URL = "http://books:2222/books/getBook?id=";
+//	private static final String DELETE_BOOK_ENDPOINT_URL = "http://books:2222/books/deleteBook?id=";
+//	private static final String GET_USER_ENDPOINT_URL = "http://users:2222/users/getUser?username=";
+//	private static final String DELETE_USER_ENDPOINT_URL = "http://users:2222/users/deleteUser?username=";
+//	private static final String UPDATE_USER_ENDPOINT_URL = "http://users:2222/users/updateUser";
+//	private static final String GET_USERNAME_ENDPOINT_URL = "http://users:2222/users/getUsername?id=";
+//
+//	// user
+//	private static final String GET_ALL_BOOKS_ENDPOINT_URL = "http://books:2222/books/getAllBook";
+//	private static final String ORDER_BOOK_ENDPOINT_URL = "http://books:2222/books/orderBook?id=";
+//	private static final String GENERATE_ORDER_ENDPOINT_URL = "http://order:2222/orders/addOrder?userid=";
+//	private static final String ADD_TO_CART_ENDPOINT_URL = "http://order:2222//cart/add?id=";
+//	private static final String GET_USER_CART_ENDPOINT_URL = "http://order:2222/cart/getCart?id=";
+//	private static final String ORDER_CART_ENDPOINT_URL = "http://order:2222/cart/orderCart?id=";
+//	private static final String DELETE_BOOK_FROM_CART_ENDPOINT_URL = "http://order:2222/cart/deletefromcart?id=";
+//	private static final String GET_USER_ORDER_ENDPOINT_URL = "http://order:2222/orders/getOrder?id=";
+//	private static final String GET_ORDER_BOOKS_ENDPOINT_URL = "http://order:2222/orders/getBooks?orderid=";
+//	private static final String GET_ALL_ORDER_ENDPOINT_URL = "http://order:2222/orders/getAllOrders";
+//	private static final String GET_ORDER_USER_ENDPOINT_URL = "http://order:2222/orders/getOrderUser?id=";
+//	private static final Object String = null;
+	
 	// admin
-	private static final String CREATE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/addUser";
-	private static final String LOGIN_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/login";
-	private static final String ADD_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/addBook";
-	private static final String GET_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/getBook?id=";
-	private static final String DELETE_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/deleteBook?id=";
-	private static final String GET_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/getUser?username=";
-	private static final String DELETE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/deleteUser?username=";
-	private static final String UPDATE_USER_ENDPOINT_URL = "http://localhost:8011/users-ws/users/updateUser";
-	private static final String GET_USERNAME_ENDPOINT_URL = "http://localhost:8011/users-ws/users/getUsername?id=";
+		private static final String CREATE_USER_ENDPOINT_URL = ":7500/users/addUser";
+		private static final String ADD_BOOK_ENDPOINT_URL = ":7501/books/addBook";
+		private static final String GET_BOOK_ENDPOINT_URL = ":7501/books/getBook?id=";
+		private static final String DELETE_BOOK_ENDPOINT_URL = ":7501/books/deleteBook?id=";
+		private static final String GET_USER_ENDPOINT_URL = ":7500/users/getUser?username=";
+		private static final String DELETE_USER_ENDPOINT_URL = ":7500/users/deleteUser?username=";
+		private static final String UPDATE_USER_ENDPOINT_URL = ":7500/users/updateUser";
+		private static final String GET_USERNAME_ENDPOINT_URL = ":7500/users/getUsername?id=";
 
-	// user
-	private static final String GET_ALL_BOOKS_ENDPOINT_URL = "http://localhost:8011/books-ws/books/getAllBook";
-	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderBook?id=";
-	private static final String GENERATE_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/addOrder?userid=";
-	private static final String ADD_TO_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/add?id=";
-	private static final String GET_USER_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/getCart?id=";
-	private static final String ORDER_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/orderCart?id=";
-	private static final String DELETE_BOOK_FROM_CART_ENDPOINT_URL = "http://localhost:8011/orders-ws/cart/deletefromcart?id=";
-	private static final String GET_USER_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/getOrder?id=";
-	private static final String GET_ORDER_BOOKS_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/getBooks?orderid=";
-	private static final String GET_ALL_ORDER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/getAllOrders";
-	private static final String GET_ORDER_USER_ENDPOINT_URL = "http://localhost:8011/orders-ws/orders/getOrderUser?id=";
-	private static final Object String = null;
+		// user
+		private static final String GET_ALL_BOOKS_ENDPOINT_URL = ":7501/books/getAllBook";
+		private static final String ORDER_BOOK_ENDPOINT_URL = ":7501/books/orderBook?id=";
+		private static final String GENERATE_ORDER_ENDPOINT_URL = ":7502/orders/addOrder?userid=";
+		private static final String ADD_TO_CART_ENDPOINT_URL = ":7502/cart/add?id=";
+		private static final String GET_USER_CART_ENDPOINT_URL = ":7502/cart/getCart?id=";
+		private static final String ORDER_CART_ENDPOINT_URL = ":7502/cart/orderCart?id=";
+		private static final String DELETE_BOOK_FROM_CART_ENDPOINT_URL = ":7502/cart/deletefromcart?id=";
+		private static final String GET_USER_ORDER_ENDPOINT_URL = ":7502/orders/getOrder?id=";
+		private static final String GET_ORDER_BOOKS_ENDPOINT_URL = ":7502/orders/getBooks?orderid=";
+		private static final String GET_ALL_ORDER_ENDPOINT_URL = ":7502/orders/getAllOrders";
+		private static final String GET_ORDER_USER_ENDPOINT_URL = ":7502/orders/getOrderUser?id=";
+		private static final Object String = null;
 
 	Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
@@ -80,15 +103,17 @@ public class ViewController {
 		RestTemplate rt = new RestTemplate();
 		String json = gson.toJson(user);
 		System.out.print(json);
-		User e = rt.postForObject(CREATE_USER_ENDPOINT_URL, user, User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		User e = rt.postForObject(host+CREATE_USER_ENDPOINT_URL, user, User.class);
 		StringBuffer url = request.getRequestURL();
+		System.out.println(url.subSequence(0, url.lastIndexOf("/")));
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/login";
 	}
 
 //	Login page
 	@GetMapping("/login")
 	public String ShowLogin(@RequestParam(value = "error", required = false) String error) {
-		System.out.println(error);
 		return "loginpage";
 	}
 	
@@ -111,7 +136,9 @@ public class ViewController {
 	@PostMapping(value = "/admin/adding", produces = "application/json")
 	public String AddBook(Book book, Model model, BindingResult bindingResult,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.postForObject(ADD_BOOK_ENDPOINT_URL, book, Book.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.postForObject(host+ADD_BOOK_ENDPOINT_URL, book, Book.class);
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/home";
 
@@ -125,9 +152,11 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findBook")
-	public String findBook(Book book, Model model) {
+	public String findBook(Book book, Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		Book book1 = rt.getForObject(host+GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
 		if(book1==null) {
 			return "admin-delete-book";
 		}
@@ -142,7 +171,9 @@ public class ViewController {
 	@GetMapping(value = "/admin/deleting")
 	public String deleteBook(@RequestParam("id") String id,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.delete(DELETE_BOOK_ENDPOINT_URL + id);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.delete(host+DELETE_BOOK_ENDPOINT_URL + id);
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/home";
 
@@ -156,10 +187,12 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findBook1")
-	public String findBook1(Book book, Model model) {
+	public String findBook1(Book book, Model model,HttpServletRequest request) {
 
 		RestTemplate rt = new RestTemplate();
-		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		Book book1 = rt.getForObject(host+GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
 		if(book1==null) {
 			return "admin-view-book";
 		}
@@ -179,9 +212,11 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findBook2")
-	public String findBook2(Book book, Model model) {
+	public String findBook2(Book book, Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		Book book1 = rt.getForObject(GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		Book book1 = rt.getForObject(host+GET_BOOK_ENDPOINT_URL + book.getBookId(), Book.class);
 		if(book1==null) {
 			return "admin-update-book";
 		}
@@ -204,7 +239,9 @@ public class ViewController {
 	@PostMapping(value = "/admin/addingUser", produces = "application/json")
 	public String addUser(User user, Model model, BindingResult bindingResult,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.postForObject(CREATE_USER_ENDPOINT_URL, user, User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.postForObject(host+CREATE_USER_ENDPOINT_URL, user, User.class);
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/home";
 		//return "redirect:http://localhost:8011/views-ws/admin/home";
@@ -219,10 +256,12 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findUser")
-	public String findUser(User user, Model model) {
+	public String findUser(User user, Model model,HttpServletRequest request) {
 		try {
 		RestTemplate rt = new RestTemplate();
-		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		User user1 = rt.getForObject(host+GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
 		String json = gson.toJson(user1);
 		System.out.print(json + "hvg");
 		model.addAttribute("user", user1);
@@ -236,7 +275,9 @@ public class ViewController {
 	@GetMapping(value = "/admin/deletingUser")
 	public String deleteUser(@RequestParam("username") String username,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.delete(DELETE_USER_ENDPOINT_URL + username);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.delete(host+DELETE_USER_ENDPOINT_URL + username);
 		//return "redirect:http://localhost:8011/views-ws/admin/home";
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/home";
@@ -251,11 +292,13 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findUser2")
-	public String findUser1(User user, Model model) {
+	public String findUser1(User user, Model model,HttpServletRequest request) {
 		try {
 		System.out.println(user.getUsername());
 		RestTemplate rt = new RestTemplate();
-		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		User user1 = rt.getForObject(host+GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
 		String json = gson.toJson(user1);
 		System.out.print(json + "hvg");
 		model.addAttribute("user", user1);
@@ -274,10 +317,12 @@ public class ViewController {
 	}
 
 	@PostMapping(value = "/admin/findUser3")
-	public String findBook3(User user, Model model) {
+	public String findBook3(User user, Model model,HttpServletRequest request) {
 		try {
 		RestTemplate rt = new RestTemplate();
-		User user1 = rt.getForObject(GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		User user1 = rt.getForObject(host+GET_USER_ENDPOINT_URL + user.getUsername(), User.class);
 		String json = gson.toJson(user1);
 		System.out.print(json);
 		model.addAttribute("user", user1);
@@ -291,7 +336,9 @@ public class ViewController {
 	@PostMapping(value = "/admin/updatingUser", produces = "application/json")
 	public String updateUser(User user, Model model, BindingResult bindingResult,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.postForObject(UPDATE_USER_ENDPOINT_URL, user, User.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.postForObject(host+UPDATE_USER_ENDPOINT_URL, user, User.class);
 		//return "redirect:http://localhost:8011/views-ws/admin/home";
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/home";
@@ -300,9 +347,11 @@ public class ViewController {
 	
 //	Admin View all Books
 	@GetMapping(value = "/admin/showBooks")
-	public String showAdminBooks(Model model) {
+	public String showAdminBooks(Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		ResponseEntity<List<Book>> response = rt.exchange(host+GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<Book>>() {
 				});
 		List<Book> books = response.getBody();
@@ -312,27 +361,29 @@ public class ViewController {
 	
 //	Admin View All Orders
 	@GetMapping("/admin/showOrders")
-	public String showOrders(Model model) {
+	public String showOrders(Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		List<String> list = rt.getForObject(GET_ALL_ORDER_ENDPOINT_URL, List.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		List<String> list = rt.getForObject(host+GET_ALL_ORDER_ENDPOINT_URL, List.class);
 		List<Order> order = new ArrayList<>();
 		for(String l : list) {
 			Order  o =new Order();
 			o.setOrderid(l);
-			Map<String,String> get = rt.getForObject(GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
+			Map<String,String> get = rt.getForObject(host+GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
 			String f = "";
 			int total =0;
 			Set<String> set = get.keySet();
 			for(String s:set) {
-				Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL+s, Book.class);
+				Book book = rt.getForObject(host+GET_BOOK_ENDPOINT_URL+s, Book.class);
 				f=f+book.getName()+" : "+get.get(s)+"\n";
 				total = total+Integer.parseInt(book.getPrice())*Integer.parseInt(get.get(s));
 			}
 			o.setCount(f);
 			o.setTotal(total);
 			
-			String userid = rt.getForObject(GET_ORDER_USER_ENDPOINT_URL+l, String.class);
-			String username = rt.getForObject(GET_USERNAME_ENDPOINT_URL+userid, String.class);
+			String userid = rt.getForObject(host+GET_ORDER_USER_ENDPOINT_URL+l, String.class);
+			String username = rt.getForObject(host+GET_USERNAME_ENDPOINT_URL+userid, String.class);
 			o.setUserid(username);
 			order.add(o);
 			
@@ -344,15 +395,17 @@ public class ViewController {
 
 //	User View Books
 	@GetMapping(value = "/user/showBooks")
-	public String showBooks(Model model, Quantity quantity, Authentication authentication) {
+	public String showBooks(Model model, Quantity quantity, Authentication authentication,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		ResponseEntity<List<Book>> response = rt.exchange(GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		ResponseEntity<List<Book>> response = rt.exchange(host+GET_ALL_BOOKS_ENDPOINT_URL, HttpMethod.GET, null,
 				new ParameterizedTypeReference<List<Book>>() {
 				});
 		List<Book> books = response.getBody();
 		model.addAttribute("books", books);
 		String name = authentication.getName();
-		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
 		model.addAttribute("id", u.getUserid());
 		return "user-view-all";
 	}
@@ -360,9 +413,11 @@ public class ViewController {
 	@GetMapping(value = "/user/ordering")
 	public String orderBook(@RequestParam("id") String bookid, @RequestParam("userid") String userid,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
 		String c = bookid + "=1";
-		rt.getForObject(ORDER_BOOK_ENDPOINT_URL + bookid, String.class);
-		rt.postForObject(GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + c, String, String.class);
+		rt.getForObject(host+ORDER_BOOK_ENDPOINT_URL + bookid, String.class);
+		rt.postForObject(host+GENERATE_ORDER_ENDPOINT_URL + userid + "&bookid=" + c, String, String.class);
 //		return "redirect:http://localhost:8011/views-ws/user/showBooks";
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
@@ -372,12 +427,14 @@ public class ViewController {
 	public String addCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,
 			@RequestParam("count") String count, Quantity quantity,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
 		if(Integer.parseInt(count)<=0) {
 			StringBuffer url = request.getRequestURL();
 			return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
 		}
 		else {
-		rt.postForObject(ADD_TO_CART_ENDPOINT_URL + userId + "&bookid=" + bookid + "&count=" + count, String,
+		rt.postForObject(host+ADD_TO_CART_ENDPOINT_URL + userId + "&bookid=" + bookid + "&count=" + count, String,
 				String.class);
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
@@ -391,12 +448,14 @@ public class ViewController {
 	public String showCart(@RequestParam("userid") String id, Model model,HttpServletRequest request) {
 		try {
 		RestTemplate rt = new RestTemplate();
-		Map<String, String> map = rt.getForObject(GET_USER_CART_ENDPOINT_URL + id, Map.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		Map<String, String> map = rt.getForObject(host+GET_USER_CART_ENDPOINT_URL + id, Map.class);
 		Set<String> set = map.keySet();
 		List<CartResponse> cartBooks = new ArrayList<>();
 		int total = 0;
 		for (String e : set) {
-			Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL + e, Book.class);
+			Book book = rt.getForObject(host+GET_BOOK_ENDPOINT_URL + e, Book.class);
 			CartResponse cart = new CartResponse();
 			cart.setBookId(book.getBookId());
 			cart.setAuthor(book.getAuthor());
@@ -426,7 +485,9 @@ public class ViewController {
 	@GetMapping("/user/ordercart")
 	public String orderCart(@RequestParam("id") String userId,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.getForObject(ORDER_CART_ENDPOINT_URL + userId, String.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.getForObject(host+ORDER_CART_ENDPOINT_URL + userId, String.class);
 		//return "redirect:http://localhost:8011/views-ws/user/showBooks";
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
@@ -436,7 +497,9 @@ public class ViewController {
 	@GetMapping("/user/deleteFromCart")
 	public String deleteFromCart(@RequestParam("id") String userId, @RequestParam("bookid") String bookid,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		rt.delete(DELETE_BOOK_FROM_CART_ENDPOINT_URL + userId + "&bookid=" + bookid);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		rt.delete(host+DELETE_BOOK_FROM_CART_ENDPOINT_URL + userId + "&bookid=" + bookid);
 		//return "redirect:http://localhost:8011/views-ws/user/cart?userid=" + userId;
 		StringBuffer url = request.getRequestURL();
 		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/cart?userid=" + userId;
@@ -444,19 +507,21 @@ public class ViewController {
 
 //	User view order
 	@GetMapping("/user/orders")
-	public String viewOrders(@RequestParam("id") String id, Model model) {
+	public String viewOrders(@RequestParam("id") String id, Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
-		List<String> list = rt.getForObject(GET_USER_ORDER_ENDPOINT_URL + id, List.class);
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		List<String> list = rt.getForObject(host+GET_USER_ORDER_ENDPOINT_URL + id, List.class);
 		List<Order> order = new ArrayList<>();
 		for(String l : list) {
 			Order  o =new Order();
 			o.setOrderid(l);
-			Map<String,String> get = rt.getForObject(GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
+			Map<String,String> get = rt.getForObject(host+GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
 			String f = "";
 			int total =0;
 			Set<String> set = get.keySet();
 			for(String s:set) {
-				Book book = rt.getForObject(GET_BOOK_ENDPOINT_URL+s, Book.class);
+				Book book = rt.getForObject(host+GET_BOOK_ENDPOINT_URL+s, Book.class);
 				f=f+book.getName()+" : "+get.get(s)+"\n";
 				total = total+Integer.parseInt(book.getPrice())*Integer.parseInt(get.get(s));
 			}
@@ -474,10 +539,12 @@ public class ViewController {
 	
 //	Get Empty Cart
 	@GetMapping("/user/emptyCart")
-	public String emptyCart(Authentication a,Model model) {
+	public String emptyCart(Authentication a,Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
+		StringBuffer b = request.getRequestURL();
+		String host = (String) b.subSequence(0, b.lastIndexOf(":"));
 		String name = a.getName();
-		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
 		model.addAttribute("id", u.getUserid());
 		return "user-empty-cart";
 	}
@@ -490,11 +557,14 @@ public class ViewController {
 	
 //	Get User Home page
 	@GetMapping("/user/home")
-	public String userHome(Authentication a,Model model) {
+	public String userHome(Authentication a,Model model,HttpServletRequest request) {
 		RestTemplate rt = new RestTemplate();
+		StringBuffer b = request.getRequestURL();
+		String host = (String) b.subSequence(0, b.lastIndexOf(":"));
 		String name = a.getName();
-		UserDetail u = rt.getForObject(GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
 		model.addAttribute("id", u.getUserid());
 		return "user-home";
 	}
+	
 }

@@ -57,7 +57,7 @@
             <section class="row justify-content-center">
                 <section class="col-12 col-sm-6 col-md-3">
                     <img th:src="@{/images/login.png}" class="bg-img">
-                        <form class="form-container" th:action="@{/login}"  method="POST">
+                        <form class="form-container" th:action="@{login}"  method="POST">
                             <div th:if="${param.error}">
                                 <div class="alert alert-danger">
                                     Invalid username or password.

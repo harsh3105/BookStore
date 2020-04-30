@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -26,7 +28,7 @@ import com.bookApp.api.order.repo.OrderRepository;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
-	private static final String ORDER_BOOK_ENDPOINT_URL = "http://localhost:8011/books-ws/books/orderCart";
+	private static final String ORDER_BOOK_ENDPOINT_URL = ":7501/books/orderCart";
 	private static final Object String = null;
 	
 	@Autowired
@@ -74,7 +76,7 @@ public class CartController {
 	}
 
 	@GetMapping("/orderCart")
-	public void orderCart(@RequestParam("id") String userId) {
+	public void orderCart(@RequestParam("id") String userId,HttpServletRequest request) {
 		UUID userid = UUID.fromString(userId);
 		Cart cart = repo.findById(userid).get();
 		Orders order = new Orders();
@@ -88,7 +90,9 @@ public class CartController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		HttpEntity<?> entity = new HttpEntity<>(map, headers);
-		ResponseEntity<Object> responseEntity = rt.exchange(ORDER_BOOK_ENDPOINT_URL, HttpMethod.POST, entity,
+		StringBuffer a = request.getRequestURL();
+		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
+		ResponseEntity<Object> responseEntity = rt.exchange(host+ORDER_BOOK_ENDPOINT_URL, HttpMethod.POST, entity,
 				Object.class);
 		repo.deleteById(userid);
 	}

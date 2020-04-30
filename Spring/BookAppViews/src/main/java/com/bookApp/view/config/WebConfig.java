@@ -42,7 +42,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 	    return new BCryptPasswordEncoder();
 	  };
 	
-	 @Autowired
+	 @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //            auth.inMemoryAuthentication()
 //            .withUser("blah")
@@ -52,7 +52,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 //            .withUser("foo")
 //            .password("foo")
 //            .roles("ADMIN");
-            
+            System.out.println("inside auth manager builder");
             auth.userDetailsService(userDetailsService()).passwordEncoder(passwordEncoder());
     }
 	
@@ -60,6 +60,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		System.out.println("inside config http security");
 		http.authorizeRequests()
 		.antMatchers("/admin/**").hasRole("ADMIN")
 		.antMatchers("/user/**").hasAnyRole("USER")

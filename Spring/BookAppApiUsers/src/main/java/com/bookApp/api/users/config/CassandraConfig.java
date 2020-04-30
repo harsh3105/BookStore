@@ -4,12 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
 import org.springframework.data.cassandra.config.AbstractClusterConfiguration;
 import org.springframework.data.cassandra.config.CassandraClusterFactoryBean;
 import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.core.cql.keyspace.CreateKeyspaceSpecification;
 
+@Configuration
 public class CassandraConfig extends AbstractClusterConfiguration{
 	
 	public static final String KEYSPACE = "userservice";

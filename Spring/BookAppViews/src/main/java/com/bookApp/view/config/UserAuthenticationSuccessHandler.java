@@ -29,6 +29,7 @@ public class UserAuthenticationSuccessHandler implements AuthenticationSuccessHa
 		boolean hasAdminRole = false;
 		Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 		for (GrantedAuthority grantedAuthority : authorities) {
+			System.out.println("inside on auth sucess");
 			System.out.println(grantedAuthority.getAuthority().toString());
 			if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
 				hasUserRole = true;

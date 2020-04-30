@@ -1,0 +1,101 @@
+version: '2.1'
+services:
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    networks:
+      - some-network
+    container_name: cassandra
+
+  discovery:
+    image: harsh3105/bookapp
+    container_name: bookapp
+    build:
+      context: ./BookApp
+      dockerfile: Dockerfile
+    ports:
+      - "8010:8010"
+    networks:
+      - some-network
+
+  # gateway:
+  #   image: harsh3105/bookappgateway
+  #   container_name: gateway
+  #   build:
+  #     context: ./BookAppApiZuulApiGateway
+  #     dockerfile: Dockerfile
+  #   ports: 
+  #     - "8011:8011"
+  #   networks:
+  #     - some-network
+  #   depends_on:
+  #     - discovery
+  #   links:
+  #     - discovery:discovery
+
+  users:
+    image: harsh3105/users
+    container_name: users
+    build:
+      context: ./BookAppApiUsers
+      dockerfile: Dockerfile
+    ports:
+      - "7500:2222"
+    networks:
+      - some-network
+    depends_on:
+       - discovery
+    links:
+      - discovery:discovery
+
+  books:
+    image: harsh3105/books
+    container_name: books
+    build:
+      context: ./BookAppApiBooks
+      dockerfile: Dockerfile
+    ports:
+      - "7501:2222"
+    networks:
+      - some-network
+    depends_on:
+      - cassandra
+      - users
+    links:
+      - discovery:discovery
+
+  order:
+    image: harsh3105/orders
+    container_name: orders
+    build:
+      context: ./BookAppApiOrder
+      dockerfile: Dockerfile
+    ports:
+      - "7502:2222"
+    networks:
+      - some-network
+    depends_on:
+       - books
+       - cassandra
+    links:
+      - discovery:discovery
+
+  views:
+    image: harsh3105/views
+    container_name: views
+    build:
+      context: ./BookAppViews
+      dockerfile: Dockerfile
+    ports:
+      - "7503:2222"
+    networks:
+      - some-network
+    depends_on:
+      #- order
+      - cassandra
+    links:
+      - discovery:discovery
+      
+networks:
+  some-network:

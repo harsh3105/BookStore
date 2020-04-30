@@ -1,0 +1,131 @@
+{
+    "AWSEBDockerrunVersion":2,
+    "containerDefinitions": [
+        {
+            "essential": true,
+            "image": "harsh3105/books",
+            "links": [
+                "discovery:discovery",
+                "cassandra:cassandra"
+            ],
+            "name": "books",
+            "memory": 1024,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "books"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 2222,
+                    "hostPort": 7501
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "cassandra:latest",
+            "name": "cassandra",
+            "memory": 10240,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "cassandra"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 9042,
+                    "hostPort": 9042
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "harsh3105/bookapp",
+            "name": "discovery",
+            "memory": 1024,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "bookapp"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 8010,
+                    "hostPort": 8010
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "harsh3105/orders",
+            "links": [
+                "discovery:discovery",
+                "cassandra:cassandra"
+            ],
+            "name": "order",
+            "memory": 1024,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "orders"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 2222,
+                    "hostPort": 7502
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "harsh3105/users",
+            "links": [
+                "discovery:discovery",
+                "cassandra:cassandra"
+            ],
+            "name": "users",
+            "memory": 1024,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "users"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 2222,
+                    "hostPort": 7500
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "harsh3105/views",
+            "links": [
+                "discovery:discovery",
+                "cassandra:cassandra"
+            ],
+            "name": "views",
+            "memory": 1024,
+            "environment": [
+                {
+                  "name": "container_name",
+                  "value": "views"
+                }
+              ],
+            "portMappings": [
+                {
+                    "containerPort": 2222,
+                    "hostPort": 7503
+                }
+            ]
+        }
+    ],
+    "family": "",
+    "volumes": []
+}
