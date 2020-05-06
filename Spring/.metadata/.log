@@ -8044,3 +8044,224 @@ java.lang.InterruptedException
 	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
 	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-01 15:05:12.204
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VBkkorVI
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-01 15:05:12.208
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.VBkkorVI
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-01 15:05:12.209
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-01 15:05:12.209
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.VBkkorVI => OK
+!SESSION 2020-05-06 10:42:03.787 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_171
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/harshgrover/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/harshgrover/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2020-05-06 10:42:47.307
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2020-05-06 10:42:48.510
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-05-06 10:42:48.510
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@457692cb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@350342e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:42:55.958
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:42:55.959
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@5c7b504[org.springframework.tooling.boot.ls:1.14.0.201912170939(id=526)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:42:55.960
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:42:56.033
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.098
+!MESSAGE Boot LS startup time from start to initialized: 25104ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.205
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PDNxGTxjisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.244
+!MESSAGE subscribing to classpath changes: sts4.classpath.PDNxGTxj isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.293
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.321
+!MESSAGE subsribers = {sts4.classpath.PDNxGTxj=Send Classpath Notifications(846)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.322
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.322
+!MESSAGE project BookAppApiUsers ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.324
+!MESSAGE project BookApp ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.324
+!MESSAGE Preparing classpath changed notification BookAppApiUsers
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.325
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.330
+!MESSAGE project BookAppApiBooks ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.331
+!MESSAGE project BookAppApiOrder ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.332
+!MESSAGE project BookAppApiZuulApiGateway ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.333
+!MESSAGE project BookAppViews ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.333
+!MESSAGE project BookAppAPIConfigServer ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.333
+!MESSAGE project bookstore ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.335
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.335
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.PDNxGTxj => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.398
+!MESSAGE classpath=166 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.400
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppApiUsers false 166
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.401
+!MESSAGE Preparing classpath changed notification BookApp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.401
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.421
+!MESSAGE classpath=175 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.425
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookApp false 175
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.426
+!MESSAGE Preparing classpath changed notification BookAppApiBooks
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.427
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.433
+!MESSAGE classpath=166 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.435
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppApiBooks false 166
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.436
+!MESSAGE Preparing classpath changed notification BookAppApiOrder
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.436
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.443
+!MESSAGE classpath=166 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.445
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppApiOrder false 166
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.455
+!MESSAGE Preparing classpath changed notification BookAppApiZuulApiGateway
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.460
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.469
+!MESSAGE classpath=182 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.473
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppApiZuulApiGateway false 182
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.473
+!MESSAGE Preparing classpath changed notification BookAppViews
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.475
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.491
+!MESSAGE classpath=174 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.496
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppViews false 174
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.497
+!MESSAGE Preparing classpath changed notification BookAppAPIConfigServer
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.497
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.501
+!MESSAGE classpath=130 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.567
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj BookAppAPIConfigServer false 130
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.579
+!MESSAGE Preparing classpath changed notification bookstore
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.627
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.678
+!MESSAGE classpath=1 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.678
+!MESSAGE buffering callback sts4.classpath.PDNxGTxj bookstore false 1
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.678
+!MESSAGE executing callback sts4.classpath.PDNxGTxj 8 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-05-06 10:43:21.917
+!MESSAGE executing callback sts4.classpath.PDNxGTxj SUCCESS [done]
+
+!ENTRY org.eclipse.lsp4e 4 0 2020-05-06 16:42:32.365
+!MESSAGE 
+!STACK 0
+java.lang.InterruptedException
+	at java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:347)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:1915)
+	at org.springframework.tooling.boot.ls.jdt.LSPTextHover.getHoverInfo(LSPTextHover.java:109)
+	at org.springframework.tooling.boot.ls.jdt.SpringBootJavaHoverProvider.getHoverInfo2(SpringBootJavaHoverProvider.java:42)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:165)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:132)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:169)
+
+!ENTRY org.eclipse.ui 2 2 2020-05-06 17:17:00.132
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

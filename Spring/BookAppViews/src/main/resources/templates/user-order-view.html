@@ -111,16 +111,18 @@
                     <th scope="col">OrderID</th>
                     <th scope="col">Order</th>
                     <th scope="col">Amount</th>
+                    <th scope="col">View</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:if="${order}==null">
-                    <td colspan="2"> No Orders Available </td>
+                    <td colspan="3"> No Orders Available </td>
                 </tr>
                 <tr th:each="order : ${order}">
                     <td><span th:text="${order.orderid}"></span></td>
                     <td><span th:text="${order.count}" ></span></td>
                     <td><span th:text="${order.total}" ></span></td>
+                    <td><a class="btn btn-success" th:href="@{/user/eachOrder}" >View</a></td>
                 </tr>
             </tbody>
         </table>

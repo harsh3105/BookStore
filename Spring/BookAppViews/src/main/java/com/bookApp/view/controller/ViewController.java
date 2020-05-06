@@ -367,9 +367,12 @@ public class ViewController {
 		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
 		List<String> list = rt.getForObject(host+GET_ALL_ORDER_ENDPOINT_URL, List.class);
 		List<Order> order = new ArrayList<>();
+		String OID = "OID000";
+		Integer i =0;
 		for(String l : list) {
 			Order  o =new Order();
-			o.setOrderid(l);
+			++i;
+			o.setOrderid(OID+i.toString());
 			Map<String,String> get = rt.getForObject(host+GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
 			String f = "";
 			int total =0;
@@ -480,6 +483,18 @@ public class ViewController {
 			return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/emptyCart";
 		}
 	}
+	
+//	view Order
+	@GetMapping("/user/eachOrder")
+	public String showEachOrder(Model model,HttpServletRequest request,Authentication a) {
+		RestTemplate rt = new RestTemplate();
+		StringBuffer b = request.getRequestURL();
+		String host = (String) b.subSequence(0, b.lastIndexOf(":"));
+		String name = a.getName();
+		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		model.addAttribute("id", u.getUserid());
+		return "user-view-each-order";
+	}
 
 	// Order Cart
 	@GetMapping("/user/ordercart")
@@ -490,7 +505,7 @@ public class ViewController {
 		rt.getForObject(host+ORDER_CART_ENDPOINT_URL + userId, String.class);
 		//return "redirect:http://localhost:8011/views-ws/user/showBooks";
 		StringBuffer url = request.getRequestURL();
-		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/showBooks";
+		return "redirect:"+url.subSequence(0, url.lastIndexOf("/"))+"/orderedCart";
 	}
 
 	// Delete from cart
@@ -513,18 +528,22 @@ public class ViewController {
 		String host = (String) a.subSequence(0, a.lastIndexOf(":"));
 		List<String> list = rt.getForObject(host+GET_USER_ORDER_ENDPOINT_URL + id, List.class);
 		List<Order> order = new ArrayList<>();
+		String oid = "OID000";
+		Integer b =0;
 		for(String l : list) {
 			Order  o =new Order();
-			o.setOrderid(l);
+			++b;
+			o.setOrderid(oid+b.toString());
 			Map<String,String> get = rt.getForObject(host+GET_ORDER_BOOKS_ENDPOINT_URL+l, Map.class);
 			String f = "";
 			int total =0;
 			Set<String> set = get.keySet();
 			for(String s:set) {
 				Book book = rt.getForObject(host+GET_BOOK_ENDPOINT_URL+s, Book.class);
-				f=f+book.getName()+" : "+get.get(s)+"\n";
+				f=f+book.getName()+" : "+get.get(s)+", ";
 				total = total+Integer.parseInt(book.getPrice())*Integer.parseInt(get.get(s));
 			}
+			f=f.substring(0, f.lastIndexOf(','));
 			o.setCount(f);
 			o.setTotal(total);
 			order.add(o);
@@ -547,6 +566,18 @@ public class ViewController {
 		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
 		model.addAttribute("id", u.getUserid());
 		return "user-empty-cart";
+	}
+	
+//	Get Successful Order cart
+	@GetMapping("/user/orderedCart")
+	public String orderCart(Authentication a,Model model,HttpServletRequest request) {
+		RestTemplate rt = new RestTemplate();
+		StringBuffer b = request.getRequestURL();
+		String host = (String) b.subSequence(0, b.lastIndexOf(":"));
+		String name = a.getName();
+		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
+		model.addAttribute("id", u.getUserid());
+		return "user-order-done";
 	}
 	
 //	Get Index Page

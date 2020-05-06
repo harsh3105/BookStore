@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <title>Orders</title>
+    <title>Cart</title>
 
     <!-- BootStrap CSS file -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -72,20 +72,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin/home}">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/admin/showOrders}">Orders<span class="sr-only">(current)</span></a>
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/user/home}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin/showBooks}">Books</a>
+                    <a class="nav-link" th:href="@{/user/showBooks}">Books</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{'/user/orders?id='+ ${id}}">Orders</a>
                 </li>
                 <form class="form-inline my-2 my-lg-0 bg-orange">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{'/user/cart?userid='+ ${id}}">Cart</a>
+                    </li>
+                </ul>
+            </span>
             <span class="navbar-text">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
@@ -95,29 +102,25 @@
             </span>
         </div>
     </nav>
-
+    <div class="alert alert-success text-center">Ordered Successfuly.</div>
     <!-- table  -->
     <div class="table-responsive">
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
-                    <th scope="col">OrderID</th>
-                    <th scope="col">Order</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">View</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Sub-Total</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr th:if="${order}==null">
-                    <td colspan="2"> No Orders Available </td>
-                </tr>
-                <tr th:each="order : ${order}">
-                    <td><span th:text="${order.orderid}"></span></td>
-                    <td><span th:text="${order.count}" ></span></td>
-                    <td><span th:text="${order.total}" ></span></td>
-                    <td><span th:text="${order.userid}" ></span></td>
-                    <td><button class="btn btn-success">View</button></td>
+                <tr >
+                    <td class="text-center" colspan="8"> Cart is Empty </td>
                 </tr>
             </tbody>
         </table>
