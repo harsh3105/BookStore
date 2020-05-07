@@ -1,0 +1,7 @@
+com.bookApp.api.books
+com.bookApp.api.books.config
+com.bookApp.api.books.controller
+com.bookApp.api.books.model
+com.bookApp.api.books.repository
+com.bookApp.api.books.services
+com.example.demo

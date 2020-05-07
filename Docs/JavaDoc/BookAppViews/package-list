@@ -1,0 +1,5 @@
+com.bookApp.view
+com.bookApp.view.config
+com.bookApp.view.controller
+com.bookApp.view.model
+com.bookApp.view.service
