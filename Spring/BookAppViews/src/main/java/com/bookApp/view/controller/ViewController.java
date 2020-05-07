@@ -27,6 +27,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.bookApp.view.model.Book;
 import com.bookApp.view.model.CartResponse;
+import com.bookApp.view.model.EachOrder;
 import com.bookApp.view.model.Order;
 import com.bookApp.view.model.Quantity;
 import com.bookApp.view.model.User;
@@ -486,13 +487,35 @@ public class ViewController {
 	
 //	view Order
 	@GetMapping("/user/eachOrder")
-	public String showEachOrder(Model model,HttpServletRequest request,Authentication a) {
+	public String showEachOrder(@RequestParam("orderid") String orderid, Model model,HttpServletRequest request,Authentication a) {
 		RestTemplate rt = new RestTemplate();
 		StringBuffer b = request.getRequestURL();
 		String host = (String) b.subSequence(0, b.lastIndexOf(":"));
 		String name = a.getName();
 		UserDetail u = rt.getForObject(host+GET_USER_ENDPOINT_URL+name, UserDetail.class);
 		model.addAttribute("id", u.getUserid());
+		
+		Map<String,String> get = rt.getForObject(host+GET_ORDER_BOOKS_ENDPOINT_URL+orderid, Map.class);
+		int total =0;
+		ArrayList<EachOrder> orderdetails = new ArrayList<>();
+		Set<String> set = get.keySet();
+		for(String s:set) {
+			Book book = rt.getForObject(host+GET_BOOK_ENDPOINT_URL+s, Book.class);
+			EachOrder order = new EachOrder();
+			order.setName(book.getName());
+			order.setPrice(book.getPrice());
+			//order.setQuantity(Integer.toString(book.getQuantity()));
+			order.setDescription(book.getDescription());
+			order.setAuthor(book.getAuthor());
+			order.setQuantity(get.get(s));
+			int sub = Integer.parseInt(book.getPrice())*Integer.parseInt(get.get(s));
+			total = total+sub;
+			order.setSubtotal(Integer.toString(sub));
+			orderdetails.add(order);
+		}
+		model.addAttribute("total", total);
+		model .addAttribute("books", orderdetails);
+		
 		return "user-view-each-order";
 	}
 
@@ -546,6 +569,7 @@ public class ViewController {
 			f=f.substring(0, f.lastIndexOf(','));
 			o.setCount(f);
 			o.setTotal(total);
+			o.setId(l);
 			order.add(o);
 			
 			//System.out.println(get);
