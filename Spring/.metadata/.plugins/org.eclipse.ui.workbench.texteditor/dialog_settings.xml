@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value=""/>
+		<item key="selection" value="GET_ORDER_BOOKS_ENDPOINT_URL"/>
 		<list key="findhistory">
+			<item value="GET_ORDER_BOOKS_ENDPOINT_URL"/>
+			<item value="each"/>
+			<item value="user/"/>
+			<item value="user/eachorder"/>
+			<item value="user/each"/>
+			<item value="GET_USER_ORDER_ENDPOINT_URL"/>
 			<item value="http://localhost:8011/books-ws/books/orderCart"/>
 			<item value="ENDPOINT"/>
 			<item value="Endpoint"/>
@@ -17,12 +23,6 @@
 			<item value="invalid"/>
 			<item value="in"/>
 			<item value="findbook1"/>
-			<item value="user"/>
-			<item value="getUser"/>
-			<item value="jpa"/>
-			<item value="data"/>
-			<item value="sping"/>
-			<item value="&#x09;xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;"/>
 		</list>
 		<list key="replacehistory">
 		</list>
