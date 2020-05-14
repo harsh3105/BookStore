@@ -19,20 +19,20 @@ services:
     networks:
       - some-network
 
-  # gateway:
-  #   image: harsh3105/bookappgateway
-  #   container_name: gateway
-  #   build:
-  #     context: ./BookAppApiZuulApiGateway
-  #     dockerfile: Dockerfile
-  #   ports: 
-  #     - "8011:8011"
-  #   networks:
-  #     - some-network
-  #   depends_on:
-  #     - discovery
-  #   links:
-  #     - discovery:discovery
+  gateway:
+    image: harsh3105/bookappgateway
+    container_name: gateway
+    build:
+      context: ./BookAppApiZuulApiGateway
+      dockerfile: Dockerfile
+    ports: 
+      - "8011:8011"
+    networks:
+      - some-network
+    depends_on:
+      - discovery
+    links:
+      - discovery:discovery
 
   users:
     image: harsh3105/users
